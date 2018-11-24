@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>晨曦&#39;s Blog</title>
+  
+  <subtitle>This is a window to the soul</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.jakehu.me/"/>
+  <updated>2017-09-14T08:39:48.000Z</updated>
+  <id>http://www.jakehu.me/</id>
+  
+  <author>
+    <name>jakehu</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《诗经·国风·陈风·宛丘》</title>
+    <link href="http://www.jakehu.me/2016/Shijing-Wanqiu/"/>
+    <id>http://www.jakehu.me/2016/Shijing-Wanqiu/</id>
+    <published>2016-05-26T03:40:38.000Z</published>
+    <updated>2017-09-14T08:39:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>你飘飘荡荡，轻歌曼舞在宛丘之上，是多么令人神往啊。我想着你爱着你，确实有着深深的感情啊，可是只是一厢情愿而没有什么希望啊!</p><p>冬冬冬冬，鼓声响了，那是你在宛丘之下唱歌跳舞。你手持鹭毛伞一年到头歌舞不停，不管是寒冷的冬天还是炎热的盛夏。</p><p>乒乒乓乓，瓦盆响了，那是你在宛丘道上跳舞歌唱。你手持鹭毛伞一年到头歌舞不停，不管是寒冷的冬天还是炎热的盛夏。<br><img src="/uploads/2016/Shijing-Wanqiu/ZGAHXN0ABPkYXwZHNw36.jpeg"><br>子之汤兮，宛丘之上兮。洵有情兮，而无望兮。<br>坎其击鼓，宛丘之下。无冬无夏，值其鹭羽。<br>坎其击缶，宛丘之道。无冬无夏，值其鹭翿。</p><hr><p>既见君子，云胡不喜</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;你飘飘荡荡，轻歌曼舞在宛丘之上，是多么令人神往啊。我想着你爱着你，确实有着深深的感情啊，可是只是一厢情愿而没有什么希望啊!&lt;/p&gt;
+&lt;p&gt;冬冬冬冬，鼓声响了，那是你在宛丘之下唱歌跳舞。你手持鹭毛伞一年到头歌舞不停，不管是寒冷的冬天还是炎热的盛夏。&lt;/p&gt;
+&lt;p&gt;乒乒乓乓，瓦
+      
+    
+    </summary>
+    
+      <category term="在水一方" scheme="http://www.jakehu.me/categories/%E5%9C%A8%E6%B0%B4%E4%B8%80%E6%96%B9/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu下必不可少的编程字体Consolas</title>
+    <link href="http://www.jakehu.me/2015/Ubuntu-Consolas/"/>
+    <id>http://www.jakehu.me/2015/Ubuntu-Consolas/</id>
+    <published>2015-12-28T02:30:18.000Z</published>
+    <updated>2015-12-31T08:06:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Consolas是一套等宽的字体，属无衬线字体，由Lucas de Groot设计。这个字体使用了微软的ClearType 字型平滑技术，并随同Windows Vista、Office 2007及Microsoft Visual Studio中发行，或可在微软的网站下载。</p><p>不说了上面的都是废话，哈哈。</p><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p><a href="https://code.google.com/p/uigroupcode/downloads/list" target="_blank" rel="noopener">YaHei.Consolas</a></p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>将上面下载的字体包解压，并按如下操作：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /usr/share/fonts/consolas</span><br><span class="line">sudo cp YaHei.Consolas.1.12.ttf /usr/share/fonts/consolas/</span><br><span class="line">sudo chmod 644 /usr/share/fonts/consolas/YaHei.Consolas.1.12.ttf</span><br><span class="line"><span class="built_in">cd</span> /usr/share/fonts/consolas</span><br><span class="line">sudo mkfontscale &amp;&amp; sudo mkfontdir &amp;&amp; sudo <span class="built_in">fc</span>-cache -fv</span><br></pre></td></tr></table></figure></p><h3 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h3><p>在这里再给两款编程常用的字体：(个人爱好罢了)<br>Monaco：<a href="https://github.com/cstrap/monaco-font" target="_blank" rel="noopener">https://github.com/cstrap/monaco-font</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -kL https://raw.github.com/cstrap/monaco-font/master/install-font-ubuntu.sh | bash</span><br></pre></td></tr></table></figure></p><p>Source Code Pro：<a href="https://github.com/adobe-fonts/source-code-pro" target="_blank" rel="noopener">https://github.com/adobe-fonts/source-code-pro</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /usr/share/fonts/adobe-fonts/<span class="built_in">source</span>-code-pro</span><br><span class="line">sudo git <span class="built_in">clone</span> https://github.com/adobe-fonts/<span class="built_in">source</span>-code-pro.git /usr/share/fonts/adobe-fonts/<span class="built_in">source</span>-code-pro</span><br><span class="line">sudo <span class="built_in">fc</span>-cache -f -v /usr/share/fonts/adobe-fonts/<span class="built_in">source</span>-code-pro</span><br></pre></td></tr></table></figure></p><hr><p>提笔为青春，人生正当年</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Consolas是一套等宽的字体，属无衬线字体，由Lucas de Groot设计。这个字体使用了微软的ClearType 字型平滑技术，并随同Windows Vista、Office 2007及Microsoft Visual Studio中发行，或可在微软的网站下载。&lt;
+      
+    
+    </summary>
+    
+      <category term="技术渣" scheme="http://www.jakehu.me/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/"/>
+    
+    
+      <category term="Ubuntu" scheme="http://www.jakehu.me/tags/Ubuntu/"/>
+    
+      <category term="Consolas" scheme="http://www.jakehu.me/tags/Consolas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu下利用proxychains高大上的安装Dropbox</title>
+    <link href="http://www.jakehu.me/2015/Ubuntu-Dropbox/"/>
+    <id>http://www.jakehu.me/2015/Ubuntu-Dropbox/</id>
+    <published>2015-12-26T07:36:42.000Z</published>
+    <updated>2015-12-26T08:19:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>对Ubuntu的折腾也有几年了吧，但是一直都是双系统或是虚拟机，最近将windows彻底的抛弃了。<br>接下来说我们今天的主角Dropbox，一直以来都是利用Dropbox进行资料同步。转入Ubuntu也不例外，在安装的时候由于Dropbox已经被墙了所以想到了走代理。</p><h3 id="Shadowsocks"><a href="#Shadowsocks" class="headerlink" title="Shadowsocks"></a>Shadowsocks</h3><p>这里也就不多说了，<a href="https://github.com/shadowsocks/shadowsocks-qt5" target="_blank" rel="noopener">Shadowsocks-Qt5</a>。</p><h3 id="proxychains"><a href="#proxychains" class="headerlink" title="proxychains"></a><a href="https://github.com/rofl0r/proxychains-ng" target="_blank" rel="noopener">proxychains</a></h3><p>在使用3版本中的时候遇到了一些问题，所以我建议直接使用4版本。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/rofl0r/proxychains-ng.git</span><br><span class="line">./configure --prefix=/usr --sysconfdir=/etc</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br><span class="line">sudo make install-config</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置 socks4 127.0.0.1 9050改为socks5 127.0.0.1 1080</span></span><br><span class="line">vi /usr/<span class="built_in">local</span>/etc/proxychains.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用</span></span><br><span class="line">proxychains4 telnet google.com 80</span><br></pre></td></tr></table></figure></p><h3 id="Dropbox"><a href="#Dropbox" class="headerlink" title="Dropbox"></a>Dropbox</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">proxychains4 dropbox start -i</span><br></pre></td></tr></table></figure><p>Dropbox启动后就会自动下载并安装，登录过后可以通过配置选项走代理。</p><h3 id="题外话："><a href="#题外话：" class="headerlink" title="题外话："></a>题外话：</h3><p><a href="http://www.jianshu.com/p/bf05fb3a4709" target="_blank" rel="noopener">解决Ubuntu下Sublime Text 3无法输入中文</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;对Ubuntu的折腾也有几年了吧，但是一直都是双系统或是虚拟机，最近将windows彻底的抛弃了。&lt;br&gt;接下来说我们今天的主角Dropbox，一直以来都是利用Dropbox进行资料同步。转入Ubuntu也不例外，在安装的时候由于Dropbox已经被墙了所以想到了走代理。&lt;
+      
+    
+    </summary>
+    
+      <category term="技术渣" scheme="http://www.jakehu.me/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/"/>
+    
+    
+      <category term="Ubuntu" scheme="http://www.jakehu.me/tags/Ubuntu/"/>
+    
+      <category term="Dropbox" scheme="http://www.jakehu.me/tags/Dropbox/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mark在学习和使用Centos时那些常用的命令/概念</title>
+    <link href="http://www.jakehu.me/2015/Centos-Command/"/>
+    <id>http://www.jakehu.me/2015/Centos-Command/</id>
+    <published>2015-12-07T16:00:00.000Z</published>
+    <updated>2015-12-26T07:11:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h3><p>在安装minimal版系统之后Centos系统的网卡默认是没有被开启的，我们可以用下面的命令编辑网络配置:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-eth0</span><br></pre></td></tr></table></figure></p><p>如果使用DHCP则需要按以下格式设置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">DEVICE=eth0</span><br><span class="line">HWADDR=08:00:27:0F:5C:17</span><br><span class="line">TYPE=Ethernet</span><br><span class="line">UUID=64ea57af-9329-40c4-90da-bf239cecea4f</span><br><span class="line">ONBOOT=yes</span><br><span class="line">NM_CONTROLLED=yes</span><br><span class="line">BOOTPROTO=dhcp</span><br></pre></td></tr></table></figure></p><p>如果是固定IP则需要按以下格式设置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">DEVICE=eth0</span><br><span class="line">HWADDR=08:00:27:0F:5C:17</span><br><span class="line">TYPE=Ethernet</span><br><span class="line">UUID=64ea57af-9329-40c4-90da-bf239cecea4f</span><br><span class="line">ONBOOT=yes</span><br><span class="line">NM_CONTROLLED=yes</span><br><span class="line">BOOTPROTO=static</span><br><span class="line">IPADDR=192.168.0.2</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line">GATEWAY=192.168.0.1</span><br><span class="line">DNS1=61.128.128.68</span><br><span class="line">DNS2=61.128.128.69</span><br><span class="line">IPV6INIT=no</span><br></pre></td></tr></table></figure></p><p>设置完成后需要运行以下命令重启网络服务：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service network restart</span><br></pre></td></tr></table></figure></p><p>最后可以用以下命令来查看IP地址：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure></p><a id="more"></a><h3 id="重启-关机命令"><a href="#重启-关机命令" class="headerlink" title="重启/关机命令"></a>重启/关机命令</h3><p>重启命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br><span class="line">shutdown -r now <span class="comment">#立刻重启(root用户使用)</span></span><br><span class="line">shutdown -r 10 <span class="comment">#过10分钟自动重启(root用户使用) </span></span><br><span class="line">shutdown -r 23:59 <span class="comment">#在时间为23:59时候重启(root用户使用)</span></span><br><span class="line"><span class="comment">#如果是通过shutdown命令设置重启的话，可以用shutdown -c命令取消重启</span></span><br></pre></td></tr></table></figure></p><p>关机命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">halt <span class="comment">#立刻关机</span></span><br><span class="line">poweroff <span class="comment">#立刻关机</span></span><br><span class="line">shutdown -h now <span class="comment">#立刻关机(root用户使用)</span></span><br><span class="line">shutdown -h 10 <span class="comment">#10分钟后自动关机</span></span><br><span class="line"><span class="comment">#如果是通过shutdown命令设置关机的话，可以用shutdown -c命令取消重启</span></span><br></pre></td></tr></table></figure></p><h3 id="清理命令"><a href="#清理命令" class="headerlink" title="清理命令"></a>清理命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo yum autoclean</span><br><span class="line">sudo yum clean</span><br><span class="line">sudo yum autoremove</span><br></pre></td></tr></table></figure><p>这三个命令主要清理升级缓存以及无用包的。</p><h3 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ls [选项] [文件/目录]</span><br><span class="line">   -a 显示所有文件，包括隐藏信息</span><br><span class="line">   -l 显示详细信息</span><br><span class="line">   -d 查看目录属性</span><br><span class="line">   -h 人性化显示文件大小</span><br><span class="line">   -i 显示inode</span><br></pre></td></tr></table></figure><p>扩展：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ls -lh 文件权限解读</span></span><br><span class="line">-rw-r--r--. 1 root root 7.5K 11月  9 15:45 install.log</span><br><span class="line"><span class="comment"># - 文件类型</span></span><br><span class="line"><span class="comment"># rw- 所有者权限</span></span><br><span class="line"><span class="comment"># r-- 所属组权限</span></span><br><span class="line"><span class="comment"># r-- 其他人权限</span></span><br><span class="line"><span class="comment"># . 代表ACL权限</span></span><br><span class="line"><span class="comment"># 1 引用计数</span></span><br><span class="line"><span class="comment"># root 所有者</span></span><br><span class="line"><span class="comment"># root 所有组</span></span><br><span class="line"><span class="comment"># r 读 / w 写 / x 执行</span></span><br></pre></td></tr></table></figure></p><h3 id="目录处理命令"><a href="#目录处理命令" class="headerlink" title="目录处理命令"></a>目录处理命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 建立目录</span></span><br><span class="line">mkdir [选项] [目录]</span><br><span class="line">      -p 递归处理</span><br><span class="line"><span class="comment"># mkdir -p blog/css</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换目录(tab键可以识别目录补全)</span></span><br><span class="line"><span class="built_in">cd</span> [目录]</span><br><span class="line">   ~  进入用户主目录</span><br><span class="line">   -  进入上次所在目录</span><br><span class="line">   .. 进入上级目录</span><br><span class="line">   .  进入当前目录</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示当前所在目录</span></span><br><span class="line"><span class="built_in">pwd</span></span><br></pre></td></tr></table></figure><p><strong>未完待续…</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;网络配置&quot;&gt;&lt;a href=&quot;#网络配置&quot; class=&quot;headerlink&quot; title=&quot;网络配置&quot;&gt;&lt;/a&gt;网络配置&lt;/h3&gt;&lt;p&gt;在安装minimal版系统之后Centos系统的网卡默认是没有被开启的，我们可以用下面的命令编辑网络配置:&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vi /etc/sysconfig/network-scripts/ifcfg-eth0&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;如果使用DHCP则需要按以下格式设置：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;DEVICE=eth0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;HWADDR=08:00:27:0F:5C:17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;TYPE=Ethernet&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;UUID=64ea57af-9329-40c4-90da-bf239cecea4f&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ONBOOT=yes&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;NM_CONTROLLED=yes&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;BOOTPROTO=dhcp&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;如果是固定IP则需要按以下格式设置：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;DEVICE=eth0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;HWADDR=08:00:27:0F:5C:17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;TYPE=Ethernet&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;UUID=64ea57af-9329-40c4-90da-bf239cecea4f&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ONBOOT=yes&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;NM_CONTROLLED=yes&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;BOOTPROTO=static&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;IPADDR=192.168.0.2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;NETMASK=255.255.255.0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GATEWAY=192.168.0.1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;DNS1=61.128.128.68&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;DNS2=61.128.128.69&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;IPV6INIT=no&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;设置完成后需要运行以下命令重启网络服务：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;service network restart&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;最后可以用以下命令来查看IP地址：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ifconfig&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术渣" scheme="http://www.jakehu.me/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/"/>
+    
+    
+      <category term="Centos" scheme="http://www.jakehu.me/tags/Centos/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《清平乐·红笺小字》</title>
+    <link href="http://www.jakehu.me/2015/Yanshu-Hongjianxiaozi/"/>
+    <id>http://www.jakehu.me/2015/Yanshu-Hongjianxiaozi/</id>
+    <published>2015-11-19T16:00:00.000Z</published>
+    <updated>2017-09-14T08:39:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是一首念远怀人的爱情词，是晏殊[艳情]词的代表作之一。运用[雁足传书]和[鱼传尺素]的典故，又化用了崔护《题都城南庄》[人面不知何处去，桃花依旧笑春风]的诗句。</p><p><img src="/uploads/2015/Yanshu-Hongjianxiaozi/20151120132820.jpg"></p><p>红笺小字，说尽平生意。</p><p>鸿雁在云鱼在水，惆怅此情难寄！</p><p>斜阳独倚西楼，遥山恰对帘钩。</p><p>人面不知何处，绿波依旧东流。</p><hr><p>锦书难寄，相思难至</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;这是一首念远怀人的爱情词，是晏殊[艳情]词的代表作之一。运用[雁足传书]和[鱼传尺素]的典故，又化用了崔护《题都城南庄》[人面不知何处去，桃花依旧笑春风]的诗句。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/uploads/2015/Yanshu-Hongjianxiaozi/20
+      
+    
+    </summary>
+    
+      <category term="一人一词" scheme="http://www.jakehu.me/categories/%E4%B8%80%E4%BA%BA%E4%B8%80%E8%AF%8D/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>PHP Developers and Use Sublime Text,Look here！</title>
+    <link href="http://www.jakehu.me/2015/Sublime-Text-PHPer/"/>
+    <id>http://www.jakehu.me/2015/Sublime-Text-PHPer/</id>
+    <published>2015-11-16T16:00:00.000Z</published>
+    <updated>2015-12-26T07:10:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>昨天写了一篇介绍<code>Sublime Text</code>插件的文章《<a href="http://www.jakehu.me/2015/Sublime-Text-Package/">带你在Sublime Text的世界里装逼 and 飞！</a>》，今天我们再来谈一谈一个PHP的开发者如何利用<code>Sublime Text</code>为自己搭建一个不错的<code>IDE</code>环境；话不多说开始吧！</p><p><a href="https://github.com/erichard/SublimePHPCompanion" target="_blank" rel="noopener"><strong>Sublime PHP Companion</strong></a><br>这是一个非常棒的插件，但是安装好了之后要小小的设置一哈快捷键。在菜单栏找到下面的快捷键设置文件<strong>Preferences &gt; Key Bindings - User</strong>。快捷键的设置请参考<a href="https://github.com/erichard/SublimePHPCompanion/blob/master/messages/1.0.0.txt" target="_blank" rel="noopener"><strong>PHP Companion Setting</strong></a>。<br><strong>find_use(F5)</strong>：当你的光标在这个类名上能快速的导入使用的类<br><img src="/uploads/2015/Sublime-Text-PHPer/php-companion-use.gif" alt=""><br><strong>expand_fqcn(F6)</strong>：当你的光标在这个类名上能快速的内联使用的类<br><img src="/uploads/2015/Sublime-Text-PHPer/php-companion-use-inline.gif" alt=""><br>就是这么的牛逼，这么的叼，当然上面只是一个示例，更多的功能自己折腾去吧！</p><a id="more"></a><p><a href="https://github.com/alienhard/SublimeAllAutocomplete" target="_blank" rel="noopener"><strong>Sublime AllAutocomplete</strong></a><br>他的功能是自动补全在已打开文件中定义的类，就像下图。这个功能怎么说呢？感觉有点鸡肋，但还是很有用处！<br><img src="/uploads/2015/Sublime-Text-PHPer/allautocomplete.gif" alt=""></p><p><strong>未完待续…</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;昨天写了一篇介绍&lt;code&gt;Sublime Text&lt;/code&gt;插件的文章《&lt;a href=&quot;http://www.jakehu.me/2015/Sublime-Text-Package/&quot;&gt;带你在Sublime Text的世界里装逼 and 飞！&lt;/a&gt;》，今天我们再来谈一谈一个PHP的开发者如何利用&lt;code&gt;Sublime Text&lt;/code&gt;为自己搭建一个不错的&lt;code&gt;IDE&lt;/code&gt;环境；话不多说开始吧！&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/erichard/SublimePHPCompanion&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;strong&gt;Sublime PHP Companion&lt;/strong&gt;&lt;/a&gt;&lt;br&gt;这是一个非常棒的插件，但是安装好了之后要小小的设置一哈快捷键。在菜单栏找到下面的快捷键设置文件&lt;strong&gt;Preferences &amp;gt; Key Bindings - User&lt;/strong&gt;。快捷键的设置请参考&lt;a href=&quot;https://github.com/erichard/SublimePHPCompanion/blob/master/messages/1.0.0.txt&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;strong&gt;PHP Companion Setting&lt;/strong&gt;&lt;/a&gt;。&lt;br&gt;&lt;strong&gt;find_use(F5)&lt;/strong&gt;：当你的光标在这个类名上能快速的导入使用的类&lt;br&gt;&lt;img src=&quot;/uploads/2015/Sublime-Text-PHPer/php-companion-use.gif&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;strong&gt;expand_fqcn(F6)&lt;/strong&gt;：当你的光标在这个类名上能快速的内联使用的类&lt;br&gt;&lt;img src=&quot;/uploads/2015/Sublime-Text-PHPer/php-companion-use-inline.gif&quot; alt=&quot;&quot;&gt;&lt;br&gt;就是这么的牛逼，这么的叼，当然上面只是一个示例，更多的功能自己折腾去吧！&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术渣" scheme="http://www.jakehu.me/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/"/>
+    
+    
+      <category term="Sublime Text" scheme="http://www.jakehu.me/tags/Sublime-Text/"/>
+    
+      <category term="PHP" scheme="http://www.jakehu.me/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>带你在Sublime Text的世界里装逼 and 飞！</title>
+    <link href="http://www.jakehu.me/2015/Sublime-Text-Package/"/>
+    <id>http://www.jakehu.me/2015/Sublime-Text-Package/</id>
+    <published>2015-11-09T16:00:00.000Z</published>
+    <updated>2017-09-14T08:39:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Sublime Text是什么，用来干什么就不用我说了哈！</p><p>这货的官网是<a href="http://www.sublimetext.com/" target="_blank" rel="noopener">Sublime Text</a>；然并卵，这不是我们要介绍的重点。介绍哈Sublime Text的插件管理<a href="https://packagecontrol.io/" target="_blank" rel="noopener">Package Control</a>,Package Control是Sublime Text的插件管理平台，我想应该是类似于PHP的Composer吧！好吧，其实我也不知道。哈哈</p><p>看这货就长这熊样：<br><img src="/uploads/2015/Sublime-Text-Package/20151103141134.png"><br>我们来介绍哈怎么在Sublime Text中安装Package Control，Sublime Text2和Sublime Text3分别有不同的安装方式。</p><p>首先：我们可以在菜单栏<strong>View-&gt;Show Console</strong>打开Console，或者是<strong>Ctrl+`</strong>打开Console。<br><a id="more"></a><br>Sublime Text2请在Console中输入以下代码安装Package Control<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import urllib2,<span class="built_in">os</span>,hashlib; h = <span class="string">'2915d1851351e5ee549c20394736b442'</span> + <span class="string">'8bc59f460fa1548d1514676163dafc88'</span>; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); <span class="built_in">os</span>.makedirs( ipp ) <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">os</span>.<span class="built_in">path</span>.exists(ipp) <span class="keyword">else</span> None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( <span class="string">'http://packagecontrol.io/'</span> + pf.replace(<span class="string">' '</span>, <span class="string">'%20'</span>)).<span class="built_in">read</span>(); dh = hashlib.sha256(by).hexdigest(); <span class="built_in">open</span>( <span class="built_in">os</span>.<span class="built_in">path</span>.join( ipp, pf), <span class="string">'wb'</span> ).<span class="built_in">write</span>(by) <span class="keyword">if</span> dh == h <span class="keyword">else</span> None; <span class="built_in">print</span>(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h) <span class="keyword">if</span> dh != h <span class="keyword">else</span> <span class="string">'Please restart Sublime Text to finish installation'</span>)</span><br></pre></td></tr></table></figure></p><p>Sublime Text3请在Console中输入以下代码安装Package Control<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request,os,hashlib; h = <span class="string">'2915d1851351e5ee549c20394736b442'</span> + <span class="string">'8bc59f460fa1548d1514676163dafc88'</span>; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); <span class="keyword">by</span> = urllib.request.urlopen( <span class="string">'http://packagecontrol.io/'</span> + pf.<span class="built_in">replace</span>(<span class="string">' '</span>, <span class="string">'%20'</span>)).<span class="built_in">read</span>(); dh = hashlib.sha256(<span class="keyword">by</span>).hexdigest(); print(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h)) <span class="keyword">if</span> dh != h <span class="keyword">else</span> <span class="built_in">open</span>(os.path.join( ipp, pf), <span class="string">'wb'</span> ).<span class="built_in">write</span>(<span class="keyword">by</span>)</span><br></pre></td></tr></table></figure></p><p>Package Control就安装好了，至于Sublime Text的快捷方式什么的在这里也不说了，因为实在是<strong>太多了</strong>；好吧，我承认其实就是我懒。</p><p>重点介绍哈使用得比较顺手的几个插件，仅仅是我使用得顺手的。Sublime Text插件太多有待自己的探索。</p><p><strong>Ctrl+Shift+p</strong>(就是因为这个功能爱上了Sublime Text，太好用了！)打开控制台，输入并选择<code>Install Package</code>然后就可以开始安装插件了！</p><p><strong>Emmet</strong><br>不得不用的一款前端开发方面的插件，Write less , show more.安装后可直接使用，Tab键触发，Alt+Shift+W是个代码机器</p><p><strong>Alignment</strong><br>代码对齐，写几个变量，选中这几行，Ctrl+Alt+A，哇，齐了</p><p><strong>Prefixr</strong><br>写 CSS可自动添加 -webkit 等私有词缀，Ctrl+Alt+X触发</p><p><strong>Tag</strong><br>Html格式化，右键Auto-Format Tags on Ducument</p><p><strong>JS Format</strong><br>一个JS代码格式化插件</p><p><strong>sublimeCodeIntel</strong><br>代码提示插件，支持的语言包括：PHP, Python, RHTML, JavaScript, Smarty, Mason, Node.js, XBL, Tcl, HTML, HTML5, TemplateToolkit, XUL, Django, Perl, Ruby, Python3</p><p><strong>Sublimerge Pro</strong><br>文件对比插件</p><p><strong>MarkdownEditing</strong><br>这个我不想多说，因为此刻我正在用这个插件写这篇文章</p><p><strong>Markdown Preview</strong><br>这玩意儿你只需要轻轻的<code>Ctrl+B</code>就能吧.md文件转换为.html文件</p><p><strong>Sublime​Linter-php</strong><br>一个支持lint语法的插件，ctrl+alt+l呼出(与qq的锁定冲突，自己去改热键吧)可以高亮linter认为有错误的代码行</p><p><strong>sublime-jsdocs(DocBlockr)</strong><br>自动注释，完全符合jsdoc标准，按/**即可，再也不用为注释烦恼啦,设置及配置参考<br><a href="https://github.com/spadgos/sublime-jsdocs" target="_blank" rel="noopener">https://github.com/spadgos/sublime-jsdocs</a></p><p><strong>Pretty JSON</strong><br>JSON美化扩展</p><p><strong>Color​Picker</strong><br>跨平台取色器插件</p><p><strong>jQuery</strong><br>用jquery的同学不容错过啊，写完后按tab键，有惊喜</p><p><strong>Clipboard History</strong><br>剪贴板历史记录，显示更多历史复制，Ctrl+Shift+V触发</p><p><strong>SideBarEnhancements</strong><br>侧栏右键功能增强，非常实用</p><p><strong>BracketHighlighter</strong><br>Bracket​Highlighter是一个括号、引号、标签高亮插件，支持[]、()、{}、””、’’和 等，比Sublime Text自带的高亮要明显得多</p><p><strong>Theme–Soda</strong><br>完美的编码主题，用过的都说好，Setting user里面添加”theme”: “Soda Dark.sublime-theme”</p><p><strong>GBK to UTF8</strong><br>将文件编码从GBK转黄成UTF8，菜单-File里面找</p><p><strong>SFTP</strong><br>直接编辑 FTP 或 SFTP 服务器上的文件，绝对FTP浮云</p><p><strong>WordPress</strong><br>集成一些WordPress的函数，对于像我这种经常要写WP模版和插件的人特别有用</p><p><strong>PHPTidy</strong><br>整理排版PHP代码</p><p><strong>YUI Compressor</strong><br>压缩JS和CSS文件</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Sublime Text是什么，用来干什么就不用我说了哈！&lt;/p&gt;
+&lt;p&gt;这货的官网是&lt;a href=&quot;http://www.sublimetext.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Sublime Text&lt;/a&gt;；然并卵，这不是我们要介绍的重点。介绍哈Sublime Text的插件管理&lt;a href=&quot;https://packagecontrol.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Package Control&lt;/a&gt;,Package Control是Sublime Text的插件管理平台，我想应该是类似于PHP的Composer吧！好吧，其实我也不知道。哈哈&lt;/p&gt;
+&lt;p&gt;看这货就长这熊样：&lt;br&gt;&lt;img src=&quot;/uploads/2015/Sublime-Text-Package/20151103141134.png&quot;&gt;&lt;br&gt;我们来介绍哈怎么在Sublime Text中安装Package Control，Sublime Text2和Sublime Text3分别有不同的安装方式。&lt;/p&gt;
+&lt;p&gt;首先：我们可以在菜单栏&lt;strong&gt;View-&amp;gt;Show Console&lt;/strong&gt;打开Console，或者是&lt;strong&gt;Ctrl+`&lt;/strong&gt;打开Console。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技术渣" scheme="http://www.jakehu.me/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/"/>
+    
+    
+      <category term="Sublime Text" scheme="http://www.jakehu.me/tags/Sublime-Text/"/>
+    
+      <category term="packagecontrol" scheme="http://www.jakehu.me/tags/packagecontrol/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《诗经·国风·郑风·溱洧》</title>
+    <link href="http://www.jakehu.me/2015/Shijing-Zhenwei/"/>
+    <id>http://www.jakehu.me/2015/Shijing-Zhenwei/</id>
+    <published>2015-10-30T16:00:00.000Z</published>
+    <updated>2017-09-14T08:39:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>溱水流，洧水淌，两条河水哗哗奔流。小伙子和大姑娘，手中兰花散发着芳香。妹说：“咱们一块儿去看热闹吧?”哥说：“我已经去过一趟了。”姑娘说：“再陪我去一趟也无妨!”洧水外，河岸边，地方宽敞，人儿喜洋洋，男女相伴，有说有笑，心花怒放。送支芍药花，以表真挚的情意。<br><img src="/uploads/2015/Shijing-Zhenwei/20151031122000.jpg"><br>溱与洧，方涣涣兮。士与女，方秉蕳兮。女曰观乎？士曰既且。且往观乎？洧之外，洵訏且乐。维士与女，伊其相谑，赠之以勺药。<br>溱与洧，浏其清矣。士与女，殷其盈矣。女曰观乎？士曰既且。且往观乎？洧之外，洵訏且乐。维士与女，伊其将谑，赠之以勺药。</p><hr><p>维士与女，伊其将谑，赠之以勺药。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;溱水流，洧水淌，两条河水哗哗奔流。小伙子和大姑娘，手中兰花散发着芳香。妹说：“咱们一块儿去看热闹吧?”哥说：“我已经去过一趟了。”姑娘说：“再陪我去一趟也无妨!”洧水外，河岸边，地方宽敞，人儿喜洋洋，男女相伴，有说有笑，心花怒放。送支芍药花，以表真挚的情意。&lt;br&gt;&lt;img
+      
+    
+    </summary>
+    
+      <category term="在水一方" scheme="http://www.jakehu.me/categories/%E5%9C%A8%E6%B0%B4%E4%B8%80%E6%96%B9/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>论如何解决在Windows下使用Composer时出现的这些问题</title>
+    <link href="http://www.jakehu.me/2015/Windows-Composer-Error/"/>
+    <id>http://www.jakehu.me/2015/Windows-Composer-Error/</id>
+    <published>2015-10-27T16:00:00.000Z</published>
+    <updated>2015-12-26T07:09:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="问题一："><a href="#问题一：" class="headerlink" title="问题一："></a>问题一：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Fatal error: Call to undefined method Composer\Package\CompletePackage::getTrans</span><br><span class="line">portOptions() <span class="keyword">in</span> C:\Users\idiot\AppData\Roaming\Composer\vendor\fxp\composer-ass</span><br><span class="line">et-plugin\Package\AbstractLazyCompletePackage.php on line 184</span><br></pre></td></tr></table></figure><p>解决办法：<br>下载最新的 composer.phar<br><a href="https://getcomposer.org/download/" target="_blank" rel="noopener">https://getcomposer.org/download/</a></p><h3 id="问题二："><a href="#问题二：" class="headerlink" title="问题二："></a>问题二：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Could not fetch https://api.github.com/repos/jquery/jquery, enter your GitHub cr</span><br><span class="line">edentials to go over the API rate <span class="built_in">limit</span></span><br><span class="line">The credentials will be swapped <span class="keyword">for</span> an OAuth token stored <span class="keyword">in</span> C:/Users/idiot/AppD</span><br><span class="line">ata/Roaming/Composer/auth.json, your password will not be stored</span><br><span class="line">To revoke access to this token you can visit https://github.com/settings/applica</span><br><span class="line">tions</span><br><span class="line">Username:</span><br></pre></td></tr></table></figure><p>解决办法：<br>1、更新Composer到最新版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php composer.phar self-update</span><br></pre></td></tr></table></figure></p><p>2、登录到Github <a href="https://github.com/settings/applications" target="_blank" rel="noopener">https://github.com/settings/applications</a> “generated a token”增加一个新的Token<br>3、运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php composer.phar config -g github-oauth.github.com token</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;问题一：&quot;&gt;&lt;a href=&quot;#问题一：&quot; class=&quot;headerlink&quot; title=&quot;问题一：&quot;&gt;&lt;/a&gt;问题一：&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre
+      
+    
+    </summary>
+    
+      <category term="技术渣" scheme="http://www.jakehu.me/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/"/>
+    
+    
+      <category term="Composer" scheme="http://www.jakehu.me/tags/Composer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《诗经·小雅· 采薇》</title>
+    <link href="http://www.jakehu.me/2015/Shijing-Caiwei/"/>
+    <id>http://www.jakehu.me/2015/Shijing-Caiwei/</id>
+    <published>2015-10-26T16:00:02.000Z</published>
+    <updated>2017-09-14T08:39:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>寒冬，阴雨霏霏，雪花纷纷，一位解甲退役的征夫在返乡途中踽踽独行。道路崎岖，又饥又渴；但边关渐远，乡关渐近。此刻，他遥望家乡，抚今追昔，不禁思绪纷繁，百感交集。艰苦的军旅生活，激烈的战斗场面，无数次的登高望归情景，一幕幕在眼前重现。《采薇》，就是三千年前这样的一位久戍之卒，在归途中的追忆唱叹之作。<br><img src="/uploads/2015/Shijing-Caiwei/20151027132526.jpg"><br>采薇采薇，薇亦作止。曰归曰归，岁亦莫止。<br>靡室靡家，𤞤狁之故。不遑启居，𤞤狁之故。<br>采薇采薇，薇亦柔止。曰归曰归，心亦忧止。<br>忧心烈烈，载饥载渴。我戍未定，靡使归聘。<br>采薇采薇，薇亦刚止。曰归曰归，岁亦阳止。<br>王事靡盬，不遑启处。忧心孔疚，我行不来！<br>彼尔维何？维常之华。彼路斯何？君子之车。<br>戎车既驾，四牡业业。岂敢定居？一月三捷。<br>驾彼四牡，四牡骙骙。君子所依，小人所腓。<br>四牡翼翼，象弭鱼服。岂不日戒？𤞤狁孔棘！<br>昔我往矣，杨柳依依。今我来思，雨雪霏霏。<br>行道迟迟，载渴载饥。我心伤悲，莫知我哀！</p><hr><p>我心伤悲，莫知我哀!</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;寒冬，阴雨霏霏，雪花纷纷，一位解甲退役的征夫在返乡途中踽踽独行。道路崎岖，又饥又渴；但边关渐远，乡关渐近。此刻，他遥望家乡，抚今追昔，不禁思绪纷繁，百感交集。艰苦的军旅生活，激烈的战斗场面，无数次的登高望归情景，一幕幕在眼前重现。《采薇》，就是三千年前这样的一位久戍之卒，在
+      
+    
+    </summary>
+    
+      <category term="在水一方" scheme="http://www.jakehu.me/categories/%E5%9C%A8%E6%B0%B4%E4%B8%80%E6%96%B9/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>唉，找不到Windows下Memcached的php扩展还是自己在Linux上编译吧！</title>
+    <link href="http://www.jakehu.me/2015/Linux-install-php-extension/"/>
+    <id>http://www.jakehu.me/2015/Linux-install-php-extension/</id>
+    <published>2015-10-26T16:00:01.000Z</published>
+    <updated>2015-12-26T07:08:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>想在Windows上安装个Memcached的php扩展真是找了好多地方都没找到，Windows上自己编译起来也非常的麻烦。算了吧还是Linux方便，走你：<br><img src="/uploads/2015/Linux-install-php-extension/20151027125619.jpg" alt=""><br>Memcached扩展需要安装libmemcached，因为该扩展是依赖libmemcached的API。所以首先我们必须安装libmemcached：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget https://launchpad.net/libmemcached/1.0/1.0.18/+download/libmemcached-1.0.18.tar.gz</span><br><span class="line">tar zxvf libmemcached-1.0.18.tar.gz</span><br><span class="line"><span class="built_in">cd</span> libmemcached-1.0.18</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure></p><p>安装完成后我们可以发现libmemcached被安装在了<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/include/</span>libmemcached</span><br></pre></td></tr></table></figure></p><a id="more"></a><p>接下来找到php中Memcached扩展页面<a href="http://pecl.php.net/package/memcached" target="_blank" rel="noopener">http://pecl.php.net/package/memcached</a>并下载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget http://pecl.php.net/get/memcached-2.2.0.tgz</span><br><span class="line">tar xvzf memcached-2.2.0.tgz</span><br><span class="line"><span class="built_in">cd</span> memcached-2.2.0</span><br></pre></td></tr></table></figure></p><p>在编译之前我们要确认php-devel是否已经安装，如果没有安装请使用(Centos)<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> php-devel</span><br></pre></td></tr></table></figure></p><p>安装；如果已经安装好接下来我们就可以编译了。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">phpize</span><br><span class="line">./configure --with-php-config=/usr/<span class="built_in">local</span>/php-5.6.4/bin/php-config --<span class="built_in">disable</span>-memcached-sasl</span><br><span class="line">make</span><br><span class="line">make <span class="built_in">test</span></span><br></pre></td></tr></table></figure></p><p>然后我们可以在<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/root/memcached<span class="number">-2.2</span><span class="number">.0</span>/modules</span><br></pre></td></tr></table></figure></p><p>目录下面找到 memcached.so,我们只需要将memcached.so移动到PHP环境所在的ext文件夹内然后再配置php.ini即可<br><strong>注：以上安装过程中出现以下错误可以按下面的解决办法解决</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#configure: error: no, sasl.h is not available. Run configure with --disable-memcached-sasl to disable this check</span></span><br><span class="line"><span class="comment">#如果出现上面错误则运行以下代码</span></span><br><span class="line">yum install cyrus-sasl-devel</span><br></pre></td></tr></table></figure></p><p>最后我们用php代码进行测试，代码如下：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$m = <span class="keyword">new</span> Memcached();</span><br><span class="line">$arr = <span class="keyword">array</span>(<span class="keyword">array</span>(<span class="string">'127.0.0.1'</span>,<span class="number">11211</span>));</span><br><span class="line">$m-&gt;addServers($arr); <span class="comment">//addServers可以同时添加多台服务器</span></span><br><span class="line">print_r($m-&gt;getStats()); <span class="comment">//打印服务器状态</span></span><br><span class="line">print_r($m-&gt;getVersion()); <span class="comment">//打印memcached版本号</span></span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;想在Windows上安装个Memcached的php扩展真是找了好多地方都没找到，Windows上自己编译起来也非常的麻烦。算了吧还是Linux方便，走你：&lt;br&gt;&lt;img src=&quot;/uploads/2015/Linux-install-php-extension/20151027125619.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;Memcached扩展需要安装libmemcached，因为该扩展是依赖libmemcached的API。所以首先我们必须安装libmemcached：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wget https://launchpad.net/libmemcached/1.0/1.0.18/+download/libmemcached-1.0.18.tar.gz&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tar zxvf libmemcached-1.0.18.tar.gz&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; libmemcached-1.0.18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;./configure&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;安装完成后我们可以发现libmemcached被安装在了&lt;br&gt;&lt;figure class=&quot;highlight awk&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;regexp&quot;&gt;/usr/&lt;/span&gt;local&lt;span class=&quot;regexp&quot;&gt;/include/&lt;/span&gt;libmemcached&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术渣" scheme="http://www.jakehu.me/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/"/>
+    
+    
+      <category term="Linux" scheme="http://www.jakehu.me/tags/Linux/"/>
+    
+      <category term="Memcached" scheme="http://www.jakehu.me/tags/Memcached/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TP-Link 703N路由器刷Openwrt+Shadowsocks实现OpenWRT 路由器自动翻墙</title>
+    <link href="http://www.jakehu.me/2015/TP-Link-703N-Openwrt-Shadowsocks/"/>
+    <id>http://www.jakehu.me/2015/TP-Link-703N-Openwrt-Shadowsocks/</id>
+    <published>2015-10-26T16:00:00.000Z</published>
+    <updated>2015-12-26T07:08:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>说明：此篇文章是作者刷机过程中遇到的一些问题和解决方案，其中有自己的也有其他网友提供的一些方案；希望这篇文章能够帮助到大家。</p><h3 id="一、前往Openwrt官网下载703n官方固件，我下载的是最新的版本。"><a href="#一、前往Openwrt官网下载703n官方固件，我下载的是最新的版本。" class="headerlink" title="一、前往Openwrt官网下载703n官方固件，我下载的是最新的版本。"></a>一、前往Openwrt官网下载703n官方固件，我下载的是最新的版本。</h3><p><a href="http://downloads.openwrt.org/barrier_breaker/14.07/ar71xx/generic/" target="_blank" rel="noopener">http://downloads.openwrt.org/barrier_breaker/14.07/ar71xx/generic/</a></p><h3 id="二、进入原路由器（192-168-1-1）在【系统工具】-gt-【软件升级】中升级刚才在Openwrt官网下载的固件。"><a href="#二、进入原路由器（192-168-1-1）在【系统工具】-gt-【软件升级】中升级刚才在Openwrt官网下载的固件。" class="headerlink" title="二、进入原路由器（192.168.1.1）在【系统工具】-&gt;【软件升级】中升级刚才在Openwrt官网下载的固件。"></a>二、进入原路由器（192.168.1.1）在【系统工具】-&gt;【软件升级】中升级刚才在Openwrt官网下载的固件。</h3><h4 id="（1）首先用一根网线将703N的Lan口和你电脑相连，电脑上设置为DHCP模式。"><a href="#（1）首先用一根网线将703N的Lan口和你电脑相连，电脑上设置为DHCP模式。" class="headerlink" title="（1）首先用一根网线将703N的Lan口和你电脑相连，电脑上设置为DHCP模式。"></a>（1）首先用一根网线将703N的Lan口和你电脑相连，电脑上设置为DHCP模式。</h4><h4 id="（2）然后运行cmd-exe，输入telnet-192-168-1-1成功后出现OpenWrt的欢迎界面。"><a href="#（2）然后运行cmd-exe，输入telnet-192-168-1-1成功后出现OpenWrt的欢迎界面。" class="headerlink" title="（2）然后运行cmd.exe，输入telnet 192.168.1.1成功后出现OpenWrt的欢迎界面。"></a>（2）然后运行cmd.exe，输入telnet 192.168.1.1成功后出现OpenWrt的欢迎界面。</h4><h4 id="（3）输入passwd更改root密码后dropbear-SSH-服务-就运行了，输入exit退出telnet；以后就可以通过ssh管理OpenWrt。"><a href="#（3）输入passwd更改root密码后dropbear-SSH-服务-就运行了，输入exit退出telnet；以后就可以通过ssh管理OpenWrt。" class="headerlink" title="（3）输入passwd更改root密码后dropbear(SSH 服务)就运行了，输入exit退出telnet；以后就可以通过ssh管理OpenWrt。"></a>（3）输入passwd更改root密码后dropbear(SSH 服务)就运行了，输入exit退出telnet；以后就可以通过ssh管理OpenWrt。</h4><p>注：最新版默认已经安装和启用Luci管理界面，你可以直接通过访问192.168.1.1进入Luci Web管理界面。<br><a id="more"></a><br>默认Luci管理界面是没有中文的，中文包安装如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">opkg update</span><br><span class="line">opkg install luci-i18n-chinese</span><br></pre></td></tr></table></figure></p><p>安装好后可以前往WEB界面更改<br><img src="/uploads/2015/TP-Link-703N-Openwrt-Shadowsocks/62972015.jpg" alt=""></p><h3 id="三、因为703N的Flash只有4M，做完上述步骤之后就只有400KB左右了；于是我选择了在703N上面挂在了一个8G的U盘来扩展。"><a href="#三、因为703N的Flash只有4M，做完上述步骤之后就只有400KB左右了；于是我选择了在703N上面挂在了一个8G的U盘来扩展。" class="headerlink" title="三、因为703N的Flash只有4M，做完上述步骤之后就只有400KB左右了；于是我选择了在703N上面挂在了一个8G的U盘来扩展。"></a>三、因为703N的Flash只有4M，做完上述步骤之后就只有400KB左右了；于是我选择了在703N上面挂在了一个8G的U盘来扩展。</h3><h4 id="（1）在Linux系统下将8G的U盘分为两个区，一个区2G为swap格式作为缓存区用，其他空间为ext4格式。（Linux系统下给U盘分区可以用GParted这款软件）"><a href="#（1）在Linux系统下将8G的U盘分为两个区，一个区2G为swap格式作为缓存区用，其他空间为ext4格式。（Linux系统下给U盘分区可以用GParted这款软件）" class="headerlink" title="（1）在Linux系统下将8G的U盘分为两个区，一个区2G为swap格式作为缓存区用，其他空间为ext4格式。（Linux系统下给U盘分区可以用GParted这款软件）"></a>（1）在Linux系统下将8G的U盘分为两个区，一个区2G为swap格式作为缓存区用，其他空间为ext4格式。（Linux系统下给U盘分区可以用GParted这款软件）</h4><h4 id="（2）挂载U盘"><a href="#（2）挂载U盘" class="headerlink" title="（2）挂载U盘"></a>（2）挂载U盘</h4><p>安装必须的包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">opkg update</span><br><span class="line">opkg install kmod-usb-storage block-mount kmod-fs-ext4</span><br></pre></td></tr></table></figure></p><p>将U盘插上，执行”block info”命令，看下U盘是否已被识别，如下图，其中中sda1、sda2为U盘分区：<br><img src="/uploads/2015/TP-Link-703N-Openwrt-Shadowsocks/64175937.jpg" alt=""><br>安装完成以后,挂载u盘.如下命令将默认的系统盘转移到u盘中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sda1 /mnt</span><br><span class="line">mkdir /tmp/root</span><br><span class="line">mount -o <span class="built_in">bind</span> / /tmp/root</span><br><span class="line">cp /tmp/root/* /mnt -a</span><br><span class="line">umount /tmp/root</span><br></pre></td></tr></table></figure></p><p>修改 /etc/config/fstab 文件,让系统启动自动挂载,修改成如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">config mount</span><br><span class="line">        option target   /overlay</span><br><span class="line">        option device   /dev/sda1</span><br><span class="line">        option fstype   ext4</span><br><span class="line">        option options  rw,sync</span><br><span class="line">        option enabled  1</span><br><span class="line">        option enabled_fsck 0</span><br></pre></td></tr></table></figure></p><p>执行如下命令让其生效<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/fstab <span class="built_in">enable</span></span><br></pre></td></tr></table></figure></p><p>设置并激活 swap 分区,修改 fstab 文件,激活<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkswap /dev/sda2</span><br><span class="line">config swap</span><br><span class="line">        option device   /dev/sda2</span><br><span class="line">        option enabled  1</span><br></pre></td></tr></table></figure></p><p>重启路由器，再次”df -h”一下，可以看到路由器的空间已经扩展成功了。<br><img src="/uploads/2015/TP-Link-703N-Openwrt-Shadowsocks/12133462.jpg" alt=""></p><h3 id="四、接下来我们就来安装Shadowsocks，这步已经有网友有成熟案例和教程了。我这里就不多说了，具体请前往："><a href="#四、接下来我们就来安装Shadowsocks，这步已经有网友有成熟案例和教程了。我这里就不多说了，具体请前往：" class="headerlink" title="四、接下来我们就来安装Shadowsocks，这步已经有网友有成熟案例和教程了。我这里就不多说了，具体请前往："></a>四、接下来我们就来安装Shadowsocks，这步已经有网友有成熟案例和教程了。我这里就不多说了，具体请前往：</h3><p><a href="http://cokebar.info/archives/664" target="_blank" rel="noopener">http://cokebar.info/archives/664</a><br>按上面的教程设置好了就只能正常的使用和翻墙了。<br>这里我也秀一张最后的成品<br><img src="/uploads/2015/TP-Link-703N-Openwrt-Shadowsocks/61677427.jpg" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;说明：此篇文章是作者刷机过程中遇到的一些问题和解决方案，其中有自己的也有其他网友提供的一些方案；希望这篇文章能够帮助到大家。&lt;/p&gt;
+&lt;h3 id=&quot;一、前往Openwrt官网下载703n官方固件，我下载的是最新的版本。&quot;&gt;&lt;a href=&quot;#一、前往Openwrt官网下载703n官方固件，我下载的是最新的版本。&quot; class=&quot;headerlink&quot; title=&quot;一、前往Openwrt官网下载703n官方固件，我下载的是最新的版本。&quot;&gt;&lt;/a&gt;一、前往Openwrt官网下载703n官方固件，我下载的是最新的版本。&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://downloads.openwrt.org/barrier_breaker/14.07/ar71xx/generic/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://downloads.openwrt.org/barrier_breaker/14.07/ar71xx/generic/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;二、进入原路由器（192-168-1-1）在【系统工具】-gt-【软件升级】中升级刚才在Openwrt官网下载的固件。&quot;&gt;&lt;a href=&quot;#二、进入原路由器（192-168-1-1）在【系统工具】-gt-【软件升级】中升级刚才在Openwrt官网下载的固件。&quot; class=&quot;headerlink&quot; title=&quot;二、进入原路由器（192.168.1.1）在【系统工具】-&amp;gt;【软件升级】中升级刚才在Openwrt官网下载的固件。&quot;&gt;&lt;/a&gt;二、进入原路由器（192.168.1.1）在【系统工具】-&amp;gt;【软件升级】中升级刚才在Openwrt官网下载的固件。&lt;/h3&gt;&lt;h4 id=&quot;（1）首先用一根网线将703N的Lan口和你电脑相连，电脑上设置为DHCP模式。&quot;&gt;&lt;a href=&quot;#（1）首先用一根网线将703N的Lan口和你电脑相连，电脑上设置为DHCP模式。&quot; class=&quot;headerlink&quot; title=&quot;（1）首先用一根网线将703N的Lan口和你电脑相连，电脑上设置为DHCP模式。&quot;&gt;&lt;/a&gt;（1）首先用一根网线将703N的Lan口和你电脑相连，电脑上设置为DHCP模式。&lt;/h4&gt;&lt;h4 id=&quot;（2）然后运行cmd-exe，输入telnet-192-168-1-1成功后出现OpenWrt的欢迎界面。&quot;&gt;&lt;a href=&quot;#（2）然后运行cmd-exe，输入telnet-192-168-1-1成功后出现OpenWrt的欢迎界面。&quot; class=&quot;headerlink&quot; title=&quot;（2）然后运行cmd.exe，输入telnet 192.168.1.1成功后出现OpenWrt的欢迎界面。&quot;&gt;&lt;/a&gt;（2）然后运行cmd.exe，输入telnet 192.168.1.1成功后出现OpenWrt的欢迎界面。&lt;/h4&gt;&lt;h4 id=&quot;（3）输入passwd更改root密码后dropbear-SSH-服务-就运行了，输入exit退出telnet；以后就可以通过ssh管理OpenWrt。&quot;&gt;&lt;a href=&quot;#（3）输入passwd更改root密码后dropbear-SSH-服务-就运行了，输入exit退出telnet；以后就可以通过ssh管理OpenWrt。&quot; class=&quot;headerlink&quot; title=&quot;（3）输入passwd更改root密码后dropbear(SSH 服务)就运行了，输入exit退出telnet；以后就可以通过ssh管理OpenWrt。&quot;&gt;&lt;/a&gt;（3）输入passwd更改root密码后dropbear(SSH 服务)就运行了，输入exit退出telnet；以后就可以通过ssh管理OpenWrt。&lt;/h4&gt;&lt;p&gt;注：最新版默认已经安装和启用Luci管理界面，你可以直接通过访问192.168.1.1进入Luci Web管理界面。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技术渣" scheme="http://www.jakehu.me/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/"/>
+    
+    
+      <category term="Openwrt" scheme="http://www.jakehu.me/tags/Openwrt/"/>
+    
+      <category term="Shadowsocks" scheme="http://www.jakehu.me/tags/Shadowsocks/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>世事无常，荣枯随缘，泰然处之</title>
+    <link href="http://www.jakehu.me/2015/life-is-changeable/"/>
+    <id>http://www.jakehu.me/2015/life-is-changeable/</id>
+    <published>2015-10-25T16:00:01.000Z</published>
+    <updated>2017-09-14T08:39:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>人生的境遇并没有绝对的好坏之别，佛说:物随心转,境由心造,烦恼皆心生。自性的清明、智慧，才是一切意念的本源。日月经年，世事无常；人生如月，盈亏有间。人生在世，难免有忠奸善恶，是非情仇，得失成败，荣辱浮沉。我们应当不逃避。不强求，一切随缘，任由世事变迁，宠辱皆不惊，以一颗恬然、淡定的心，泰然处之。</p><p><img src="/uploads/2015/life-is-changeable/54114822.jpg"></p><p>从前，山上有座古刹，里面住着师徒四人。一天，师父为考验弟子们的修行功夫，与他们一起来到寺庙前的两棵树前。</p><p>其中一棵尚未到秋天枝干就枯瘪了，叶子也凋零得差不多，恐怕早已病死了。另一棵则郁郁葱葱。深绿的叶子像涂了层蜡似的，在阳光下泛着耀眼的光泽，一副欣欣向荣的样子。</p><p>这时，师父发话了：“你们说说，这两棵树，是枯的好，还是荣的好？”</p><p>大徒弟抢着回答：“荣的好！”</p><p>二徒弟接着说：“枯的好！”</p><p>唯有天资聪颖的小徒弟沉思片刻，望着远方绵亘的山脉，缓缓地说：“枯也随它，荣也随它……”</p><a id="more"></a><p>“春有百花秋有月，夏有凉风冬有雪。若无闲事挂心头，人间处处好时节。”人生的境遇并没有绝对的好坏之别，而常人眼里之所以有顺逆、褒贬等种种色彩，是缘于内心的染缸。境由心生，一切唯心造。由此可见，自性的清明、智慧，才是一切意念的本源。</p><p>日月经年，世事无常；人生如月，盈亏有间。人生在世，难免有忠奸善恶，是非情仇，得失成败，荣辱浮沉。我们应当不逃避。不强求，一切随缘，任由世事变迁，宠辱皆不惊，以一颗恬然、淡定的心，泰然处之。</p><p>世尊说，一个人如果有觉悟的人生，虽然睡卧草皮，也会觉得快乐。不懂得人生的人，就算跑到天堂去，也活得不开心。如怀有一颗智慧、明朗的心，洞察世事人情，透析宇宙、人生的真理，那么，一切的横逆苦厄都是圆满的，就日日是好日，夜夜是清宵……</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;人生的境遇并没有绝对的好坏之别，佛说:物随心转,境由心造,烦恼皆心生。自性的清明、智慧，才是一切意念的本源。日月经年，世事无常；人生如月，盈亏有间。人生在世，难免有忠奸善恶，是非情仇，得失成败，荣辱浮沉。我们应当不逃避。不强求，一切随缘，任由世事变迁，宠辱皆不惊，以一颗恬然、淡定的心，泰然处之。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/uploads/2015/life-is-changeable/54114822.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;从前，山上有座古刹，里面住着师徒四人。一天，师父为考验弟子们的修行功夫，与他们一起来到寺庙前的两棵树前。&lt;/p&gt;
+&lt;p&gt;其中一棵尚未到秋天枝干就枯瘪了，叶子也凋零得差不多，恐怕早已病死了。另一棵则郁郁葱葱。深绿的叶子像涂了层蜡似的，在阳光下泛着耀眼的光泽，一副欣欣向荣的样子。&lt;/p&gt;
+&lt;p&gt;这时，师父发话了：“你们说说，这两棵树，是枯的好，还是荣的好？”&lt;/p&gt;
+&lt;p&gt;大徒弟抢着回答：“荣的好！”&lt;/p&gt;
+&lt;p&gt;二徒弟接着说：“枯的好！”&lt;/p&gt;
+&lt;p&gt;唯有天资聪颖的小徒弟沉思片刻，望着远方绵亘的山脉，缓缓地说：“枯也随它，荣也随它……”&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="呱唧呱唧" scheme="http://www.jakehu.me/categories/%E5%91%B1%E5%94%A7%E5%91%B1%E5%94%A7/"/>
+    
+    
+      <category term="杂谈" scheme="http://www.jakehu.me/tags/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>大美青海，大美中国</title>
+    <link href="http://www.jakehu.me/2015/picture-test/"/>
+    <id>http://www.jakehu.me/2015/picture-test/</id>
+    <published>2015-10-25T16:00:00.000Z</published>
+    <updated>2015-12-26T07:06:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 100%;"><img src="/uploads/2015/picture-test/wKgBpVXWf62ABGXtAANDpkzuBvM47.jpeg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="/uploads/2015/picture-test/wKgBpVXWf6WAKbPFAAGxsP-ZKnQ05.jpeg" alt=""></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="/uploads/2015/picture-test/wKgBpVXWf6aAZXJhAAH3gy1Zvms09.jpeg" alt=""></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="/uploads/2015/picture-test/wKgBpVXWf6eAe_EYAAH1AzPUNYE07.jpeg" alt=""></div></div></div></div><hr><p>是大山就有高度和坡度，是江河就有宽度和深度，是人就存在不足和错误。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;div class=&quot;group-picture&quot;&gt;&lt;div class=&quot;group-picture-container&quot;&gt;&lt;div class=&quot;group-picture-row&quot;&gt;&lt;div class=&quot;group-picture-column&quot; style=&quot;widt
+      
+    
+    </summary>
+    
+      <category term="呱唧呱唧" scheme="http://www.jakehu.me/categories/%E5%91%B1%E5%94%A7%E5%91%B1%E5%94%A7/"/>
+    
+    
+      <category term="美图" scheme="http://www.jakehu.me/tags/%E7%BE%8E%E5%9B%BE/"/>
+    
+      <category term="青海" scheme="http://www.jakehu.me/tags/%E9%9D%92%E6%B5%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>说一说，那些年我们一起自建过的Git服务器</title>
+    <link href="http://www.jakehu.me/2015/Git-on-the-Server/"/>
+    <id>http://www.jakehu.me/2015/Git-on-the-Server/</id>
+    <published>2015-10-22T16:00:01.000Z</published>
+    <updated>2015-12-26T07:07:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Git服务器端搭建，基于ssh协议"><a href="#Git服务器端搭建，基于ssh协议" class="headerlink" title="Git服务器端搭建，基于ssh协议"></a>Git服务器端搭建，基于ssh协议</h3><h4 id="服务端架设空git-repo"><a href="#服务端架设空git-repo" class="headerlink" title="服务端架设空git repo"></a>服务端架设空git repo</h4><p>ssh登录服务器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">groupadd git <span class="comment">#增加git用户组</span></span><br><span class="line">useradd jakehu -g git <span class="comment">#增加名为jakehu的用户属于git用户组</span></span><br><span class="line">ln –s /gitwork /git </span><br><span class="line"><span class="comment">#gitwork为实际工作目录，git为空目录做链接使用，可直接在根目录建立git文件夹即可</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#以下造作操作是以直接在根目录下建立git文件夹为前提</span></span><br><span class="line">chown jakehu.git /git</span><br><span class="line">su jakehu</span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line"><span class="built_in">cd</span> /git</span><br><span class="line"><span class="comment">#空库的目录权限设定为 组内读写</span></span><br><span class="line"><span class="comment">#用--shared  git会自动搞定创建起来的文件目录</span></span><br><span class="line"><span class="comment"># shared 参数很重要</span></span><br><span class="line">git init --bare --shared test.git</span><br></pre></td></tr></table></figure></p><p>到此为止服务器端架设完成<br><a id="more"></a></p><h4 id="客户端生成密钥"><a href="#客户端生成密钥" class="headerlink" title="客户端生成密钥"></a>客户端生成密钥</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">ssh-keygen -b 2048 -t rsa <span class="comment">#生成密钥</span></span><br><span class="line"><span class="comment">#windows生成密钥方式不同,可用Pageant生成密钥</span></span><br></pre></td></tr></table></figure><h4 id="服务器端导入密钥"><a href="#服务器端导入密钥" class="headerlink" title="服务器端导入密钥"></a>服务器端导入密钥</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">su jakehu</span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line"><span class="built_in">cd</span> .ssh</span><br><span class="line">cat id_rsa_jakehu.pub &gt;&gt; authorized_keys</span><br><span class="line">chmod 600 authorized_keys</span><br></pre></td></tr></table></figure><p>最后访问地址: ssh://jakehu@serverIP/git/test.git</p><h4 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h4><p>服务器上自动部署<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root</span><br><span class="line"><span class="built_in">cd</span> /www/ <span class="comment">#网站目录</span></span><br><span class="line">sh git-deploy.sh</span><br><span class="line"><span class="comment">#https://raw.githubusercontent.com/jakehu/tools/master/git-deploy.sh</span></span><br></pre></td></tr></table></figure></p><p>服务器上切换分支测试<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root</span><br><span class="line"><span class="built_in">cd</span> /www/web</span><br><span class="line">git checkout dev</span><br><span class="line">chown -R www:www /www/web</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Git服务器端搭建，基于ssh协议&quot;&gt;&lt;a href=&quot;#Git服务器端搭建，基于ssh协议&quot; class=&quot;headerlink&quot; title=&quot;Git服务器端搭建，基于ssh协议&quot;&gt;&lt;/a&gt;Git服务器端搭建，基于ssh协议&lt;/h3&gt;&lt;h4 id=&quot;服务端架设空git-repo&quot;&gt;&lt;a href=&quot;#服务端架设空git-repo&quot; class=&quot;headerlink&quot; title=&quot;服务端架设空git repo&quot;&gt;&lt;/a&gt;服务端架设空git repo&lt;/h4&gt;&lt;p&gt;ssh登录服务器&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;groupadd git &lt;span class=&quot;comment&quot;&gt;#增加git用户组&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;useradd jakehu -g git &lt;span class=&quot;comment&quot;&gt;#增加名为jakehu的用户属于git用户组&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ln –s /gitwork /git &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#gitwork为实际工作目录，git为空目录做链接使用，可直接在根目录建立git文件夹即可&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#以下造作操作是以直接在根目录下建立git文件夹为前提&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;chown jakehu.git /git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;su jakehu&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; ~&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; /git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#空库的目录权限设定为 组内读写&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#用--shared  git会自动搞定创建起来的文件目录&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# shared 参数很重要&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git init --bare --shared test.git&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;到此为止服务器端架设完成&lt;br&gt;
+    
+    </summary>
+    
+      <category term="服务器" scheme="http://www.jakehu.me/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+      <category term="git" scheme="http://www.jakehu.me/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>你好Hexo，我来了！</title>
+    <link href="http://www.jakehu.me/2015/hello-hexo/"/>
+    <id>http://www.jakehu.me/2015/hello-hexo/</id>
+    <published>2015-10-22T16:00:00.000Z</published>
+    <updated>2015-12-26T07:07:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>13年开始玩博客，最开始的时候还比较上心每天都去更新一两篇文章；也把自己的做的一些笔记分享在博客上。后来渐渐的也就失去了兴趣了，好吧，其实要把一件事变成一个习惯还是挺难的。再后来我发现<code>wordpress</code>越来越慢，把啥子<code>Google</code>的一些字体什么的都去掉之后还是很慢。其实也是<code>wordpress</code>都已经进行了这么多的迭代，所以我放弃了<code>wordpress</code>开始寻找他的代替品。</p><p>在放弃<code>Wordpress</code>之后我开始寻找一款极简的博客，我尝试过在IT界不少人推荐的<a href="http://typecho.org/" target="_blank" rel="noopener">Typecho</a>，也试过<code>Github</code>官方推荐的<code>jekyll</code>,直到我看到<code>Hexo</code>；好吧，我承认我找到了我想要的。</p><p>当然在这里也要感谢<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">iissnan</a>为我们带来这么棒棒哒的主题。</p><p>就这样Hexo我来了，哈哈！</p><hr><p>广厦千间，夜眠仅需六尺；家财万贯，日食不过三餐。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;13年开始玩博客，最开始的时候还比较上心每天都去更新一两篇文章；也把自己的做的一些笔记分享在博客上。后来渐渐的也就失去了兴趣了，好吧，其实要把一件事变成一个习惯还是挺难的。再后来我发现&lt;code&gt;wordpress&lt;/code&gt;越来越慢，把啥子&lt;code&gt;Google&lt;/c
+      
+    
+    </summary>
+    
+      <category term="呱唧呱唧" scheme="http://www.jakehu.me/categories/%E5%91%B1%E5%94%A7%E5%91%B1%E5%94%A7/"/>
+    
+    
+      <category term="杂谈" scheme="http://www.jakehu.me/tags/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
+  
+</feed>
