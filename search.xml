@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[记Mysql部分用法]]></title>
+    <url>%2F2018%2Fmysql-usage%2F</url>
+    <content type="text"><![CDATA[JSON1、查询数组中对象 JSON_CONTAINS 用法 12345select * from circulationwhere JSON_CONTAINS(goods-&gt;'$[*].name', '["海带结（香辣味）150克/袋"]', '$')select * from circulationwhere JSON_CONTAINS(goods-&gt;'$[*].gid', '[20]', '$') 2、Json字符串转化为Json对象 CONVERT 用法 1select CONVERT('&#123;"mail": "amy@gmail.com", "name": "Amy"&#125;',JSON) 3、元素转化为数组 JSON_ARRAY 用法 1SELECT JSON_ARRAY(1, "abc", NULL, TRUE, CURTIME()) 常规1、查询重复记录12select * from merchantwhere num in (select num from synk.merchant group by num having count(num) &gt; 1)]]></content>
+      <categories>
+        <category>技术渣</category>
+      </categories>
+      <tags>
+        <tag>Mysql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[记Gitlab到Docker全过程CI/CD]]></title>
     <url>%2F2018%2Fgitlab-docker%2F</url>
     <content type="text"><![CDATA[前记很久都没有写博客了，不是没时间，可能就是纯粹的懒吧。 背景公司内部版本管理一直以来都是用的Gitlab，而系统早在前年的时候就已经全部上了Docker，gitlab-runner发布过后就一直想利用gitlab-runner进行CI/CD自动化的部署。 Gitlab &amp;&amp; Gitlab-Runner基于原生原方案关于gitlab &amp;&amp; gitlab-runner的安装我这边就不赘述了，不会的可以看官方的文档。 Gitlab Runner的安装和注册 我们在物理机或云上部署的时候一个流程图如下： 从上图我们可以看出，当我们的服务器多了之后每个服务器都需要安装runner服务，这对于我这样懒的人感觉好麻烦的；受不了。 当然也有可以解决的方案，如：单独用一服务器挂载共享磁盘。 基于Docker新方案今天我们重点来谈谈，gitlab如何和docker完美结合 先看看看架构图，如下： 接下来我们来说明一哈上面这张图的一个工作流程。 1、开发人员通过本地push代码到gitlab上2、gitlab-runner会根据代码根目录下的gitlab-ci.yml文件执行CI，gitlab-ci.yml使用说明请移步：gitlab-ci使用说明。3、在CI过程中会去读取你在代码下Dockerfile文件构建镜像。docker的使用我们这里不做过多赘述4、将镜像推送到镜像仓库，可以自建，也可以用像阿里云的仓库5、docker拉去镜像对服务进行部署。]]></content>
