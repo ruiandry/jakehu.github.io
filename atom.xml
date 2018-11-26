@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.jakehu.me/"/>
-  <updated>2018-11-26T02:22:09.921Z</updated>
+  <updated>2018-11-26T02:26:57.720Z</updated>
   <id>http://www.jakehu.me/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://www.jakehu.me/2018/gitlab-docker/"/>
     <id>http://www.jakehu.me/2018/gitlab-docker/</id>
     <published>2018-11-25T16:00:00.000Z</published>
-    <updated>2018-11-26T02:22:09.921Z</updated>
+    <updated>2018-11-26T02:26:57.720Z</updated>
     
     <content type="html"><![CDATA[<h3 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h3><p>很久都没有写博客了，不是没时间，可能就是纯粹的懒吧。</p><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>公司内部版本管理一直以来都是用的<code>Gitlab</code>，而系统早在前年的时候就已经全部上了<code>Docker</code>，<code>gitlab-runner</code>发布过后就一直想利用<code>gitlab-runner</code>进行<code>CI/CD</code>自动化的部署。</p><h3 id="Gitlab-amp-amp-Gitlab-Runner"><a href="#Gitlab-amp-amp-Gitlab-Runner" class="headerlink" title="Gitlab &amp;&amp; Gitlab-Runner"></a>Gitlab &amp;&amp; Gitlab-Runner</h3><h4 id="基于原生原方案"><a href="#基于原生原方案" class="headerlink" title="基于原生原方案"></a>基于原生原方案</h4><p>关于<code>gitlab &amp;&amp; gitlab-runner</code>的安装我这边就不赘述了，不会的可以看官方的文档。</p><p><a href="https://docs.gitlab.com.cn/" target="_blank" rel="noopener">Gitlab</a></p><p><a href="https://docs.gitlab.com.cn/runner/" target="_blank" rel="noopener">Runner的安装和注册</a></p><p>我们在物理机或云上部署的时候一个流程图如下：</p><p><img src="/uploads/2018/gitlab-docker/runner.png"></p><p>从上图我们可以看出，当我们的服务器多了之后每个服务器都需要安装<code>runner</code>服务，这对于我这样懒的人感觉好麻烦的；受不了。</p><p>当然也有可以解决的方案，如：单独用一服务器挂载共享磁盘。</p><h4 id="基于Docker新方案"><a href="#基于Docker新方案" class="headerlink" title="基于Docker新方案"></a>基于Docker新方案</h4><p>今天我们重点来谈谈，<code>gitlab</code>如何和<code>docker</code>完美结合</p><p>先看看看架构图，如下：</p><p><img src="/uploads/2018/gitlab-docker/docker.png"></p><p>接下来我们来说明一哈上面这张图的一个工作流程。</p><blockquote><p>1、开发人员通过本地<code>push</code>代码到<code>gitlab</code>上<br>2、<code>gitlab-runner</code>会根据代码根目录下的<code>gitlab-ci.yml</code>文件执行<code>CI</code>，<code>gitlab-ci.yml</code>使用说明请移步：<a href="https://docs.gitlab.com/ce/ci/yaml/README.html" target="_blank" rel="noopener">gitlab-ci使用说明</a>。<br>3、在<code>CI</code>过程中会去读取你在代码下<code>Dockerfile</code>文件构建镜像。<code>docker</code>的使用我们这里不做过多赘述<br>4、将镜像推送到镜像仓库，可以自建，也可以用像阿里云的仓库<br>5、<code>docker</code>拉去镜像对服务进行部署。</p></blockquote>]]></content>
     
