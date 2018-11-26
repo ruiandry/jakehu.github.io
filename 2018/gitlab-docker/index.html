@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Composer,">
+  <meta name="keywords" content="Gitlab,Docker,">
 
 
 
@@ -81,18 +81,21 @@
 
 
 
-<meta name="description" content="问题一：123Fatal error: Call to undefined method Composer\Package\CompletePackage::getTransportOptions() in C:\Users\idiot\AppData\Roaming\Composer\vendor\fxp\composer-asset-plugin\Package\AbstractLazyCom">
-<meta name="keywords" content="Composer">
+<meta name="description" content="前记很久都没有写博客了，不是没时间，可能就是纯粹的懒吧。 背景公司内部版本管理一直以来都是用的Gitlab，而系统早在前年的时候就已经全部上了Docker，gitlab-runner发布过后就一直想利用gitlab-runner进行CI/CD自动化的部署。 Gitlab &amp;amp;&amp;amp; Gitlab-Runner基于原生原方案关于gitlab &amp;amp;&amp;amp; gitlab-runner">
+<meta name="keywords" content="Gitlab,Docker">
 <meta property="og:type" content="article">
-<meta property="og:title" content="论如何解决在Windows下使用Composer时出现的这些问题">
-<meta property="og:url" content="http://www.jakehu.me/2015/Windows-Composer-Error/index.html">
+<meta property="og:title" content="记Gitlab到Docker全过程CI&#x2F;CD">
+<meta property="og:url" content="http://www.jakehu.me/2018/gitlab-docker/index.html">
 <meta property="og:site_name" content="晨曦&#39;s Blog">
-<meta property="og:description" content="问题一：123Fatal error: Call to undefined method Composer\Package\CompletePackage::getTransportOptions() in C:\Users\idiot\AppData\Roaming\Composer\vendor\fxp\composer-asset-plugin\Package\AbstractLazyCom">
+<meta property="og:description" content="前记很久都没有写博客了，不是没时间，可能就是纯粹的懒吧。 背景公司内部版本管理一直以来都是用的Gitlab，而系统早在前年的时候就已经全部上了Docker，gitlab-runner发布过后就一直想利用gitlab-runner进行CI/CD自动化的部署。 Gitlab &amp;amp;&amp;amp; Gitlab-Runner基于原生原方案关于gitlab &amp;amp;&amp;amp; gitlab-runner">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2015-12-26T07:09:20.000Z">
+<meta property="og:image" content="http://www.jakehu.me/uploads/2018/gitlab-docker/runner.png">
+<meta property="og:image" content="http://www.jakehu.me/uploads/2018/gitlab-docker/docker.png">
+<meta property="og:updated_time" content="2018-11-26T02:22:09.921Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="论如何解决在Windows下使用Composer时出现的这些问题">
-<meta name="twitter:description" content="问题一：123Fatal error: Call to undefined method Composer\Package\CompletePackage::getTransportOptions() in C:\Users\idiot\AppData\Roaming\Composer\vendor\fxp\composer-asset-plugin\Package\AbstractLazyCom">
+<meta name="twitter:title" content="记Gitlab到Docker全过程CI&#x2F;CD">
+<meta name="twitter:description" content="前记很久都没有写博客了，不是没时间，可能就是纯粹的懒吧。 背景公司内部版本管理一直以来都是用的Gitlab，而系统早在前年的时候就已经全部上了Docker，gitlab-runner发布过后就一直想利用gitlab-runner进行CI/CD自动化的部署。 Gitlab &amp;amp;&amp;amp; Gitlab-Runner基于原生原方案关于gitlab &amp;amp;&amp;amp; gitlab-runner">
+<meta name="twitter:image" content="http://www.jakehu.me/uploads/2018/gitlab-docker/runner.png">
 
 
 
@@ -122,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://www.jakehu.me/2015/Windows-Composer-Error/">
+  <link rel="canonical" href="http://www.jakehu.me/2018/gitlab-docker/">
 
 
 
 
 
-  <title>论如何解决在Windows下使用Composer时出现的这些问题 | 晨曦's Blog</title>
+  <title>记Gitlab到Docker全过程CI/CD | 晨曦's Blog</title>
   
 
 
@@ -287,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.jakehu.me/2015/Windows-Composer-Error/">
+    <link itemprop="mainEntityOfPage" href="http://www.jakehu.me/2018/gitlab-docker/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="jakehu">
@@ -304,7 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">论如何解决在Windows下使用Composer时出现的这些问题</h1>
+          <h1 class="post-title" itemprop="name headline">记Gitlab到Docker全过程CI/CD</h1>
         
 
         <div class="post-meta">
@@ -316,8 +319,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-10-28T00:00:00+08:00">
-                2015-10-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-26T00:00:00+08:00">
+                2018-11-26
               </time>
             
 
@@ -357,8 +360,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2015/Windows-Composer-Error/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/Windows-Composer-Error/" itemprop="commentCount"></span>
+                <a href="/2018/gitlab-docker/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/gitlab-docker/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -366,7 +369,7 @@
 
           
           
-             <span id="/2015/Windows-Composer-Error/" class="leancloud_visitors" data-flag-title="论如何解决在Windows下使用Composer时出现的这些问题">
+             <span id="/2018/gitlab-docker/" class="leancloud_visitors" data-flag-title="记Gitlab到Docker全过程CI/CD">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -397,11 +400,22 @@
       
 
       
-        <h3 id="问题一："><a href="#问题一：" class="headerlink" title="问题一："></a>问题一：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Fatal error: Call to undefined method Composer\Package\CompletePackage::getTrans</span><br><span class="line">portOptions() <span class="keyword">in</span> C:\Users\idiot\AppData\Roaming\Composer\vendor\fxp\composer-ass</span><br><span class="line">et-plugin\Package\AbstractLazyCompletePackage.php on line 184</span><br></pre></td></tr></table></figure>
-<p>解决办法：<br>下载最新的 composer.phar<br><a href="https://getcomposer.org/download/" target="_blank" rel="noopener">https://getcomposer.org/download/</a></p>
-<h3 id="问题二："><a href="#问题二：" class="headerlink" title="问题二："></a>问题二：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Could not fetch https://api.github.com/repos/jquery/jquery, enter your GitHub cr</span><br><span class="line">edentials to go over the API rate <span class="built_in">limit</span></span><br><span class="line">The credentials will be swapped <span class="keyword">for</span> an OAuth token stored <span class="keyword">in</span> C:/Users/idiot/AppD</span><br><span class="line">ata/Roaming/Composer/auth.json, your password will not be stored</span><br><span class="line">To revoke access to this token you can visit https://github.com/settings/applica</span><br><span class="line">tions</span><br><span class="line">Username:</span><br></pre></td></tr></table></figure>
-<p>解决办法：<br>1、更新Composer到最新版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php composer.phar self-update</span><br></pre></td></tr></table></figure></p>
-<p>2、登录到Github <a href="https://github.com/settings/applications" target="_blank" rel="noopener">https://github.com/settings/applications</a> “generated a token”增加一个新的Token<br>3、运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php composer.phar config -g github-oauth.github.com token</span><br></pre></td></tr></table></figure></p>
+        <h3 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h3><p>很久都没有写博客了，不是没时间，可能就是纯粹的懒吧。</p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>公司内部版本管理一直以来都是用的<code>Gitlab</code>，而系统早在前年的时候就已经全部上了<code>Docker</code>，<code>gitlab-runner</code>发布过后就一直想利用<code>gitlab-runner</code>进行<code>CI/CD</code>自动化的部署。</p>
+<h3 id="Gitlab-amp-amp-Gitlab-Runner"><a href="#Gitlab-amp-amp-Gitlab-Runner" class="headerlink" title="Gitlab &amp;&amp; Gitlab-Runner"></a>Gitlab &amp;&amp; Gitlab-Runner</h3><h4 id="基于原生原方案"><a href="#基于原生原方案" class="headerlink" title="基于原生原方案"></a>基于原生原方案</h4><p>关于<code>gitlab &amp;&amp; gitlab-runner</code>的安装我这边就不赘述了，不会的可以看官方的文档。</p>
+<p><a href="https://docs.gitlab.com.cn/" target="_blank" rel="noopener">Gitlab</a></p>
+<p><a href="https://docs.gitlab.com.cn/runner/" target="_blank" rel="noopener">Runner的安装和注册</a></p>
+<p>我们在物理机或云上部署的时候一个流程图如下：</p>
+<p><img src="/uploads/2018/gitlab-docker/runner.png"></p>
+<p>从上图我们可以看出，当我们的服务器多了之后每个服务器都需要安装<code>runner</code>服务，这对于我这样懒的人感觉好麻烦的；受不了。</p>
+<p>当然也有可以解决的方案，如：单独用一服务器挂载共享磁盘。</p>
+<h4 id="基于Docker新方案"><a href="#基于Docker新方案" class="headerlink" title="基于Docker新方案"></a>基于Docker新方案</h4><p>今天我们重点来谈谈，<code>gitlab</code>如何和<code>docker</code>完美结合</p>
+<p>先看看看架构图，如下：</p>
+<p><img src="/uploads/2018/gitlab-docker/docker.png"></p>
+<p>接下来我们来说明一哈上面这张图的一个工作流程。</p>
+<blockquote>
+<p>1、开发人员通过本地<code>push</code>代码到<code>gitlab</code>上<br>2、<code>gitlab-runner</code>会根据代码根目录下的<code>gitlab-ci.yml</code>文件执行<code>CI</code>，<code>gitlab-ci.yml</code>使用说明请移步：<a href="https://docs.gitlab.com/ce/ci/yaml/README.html" target="_blank" rel="noopener">gitlab-ci使用说明</a>。<br>3、在<code>CI</code>过程中会去读取你在代码下<code>Dockerfile</code>文件构建镜像。<code>docker</code>的使用我们这里不做过多赘述<br>4、将镜像推送到镜像仓库，可以自建，也可以用像阿里云的仓库<br>5、<code>docker</code>拉去镜像对服务进行部署。</p>
+</blockquote>
 
       
     </div>
@@ -419,7 +433,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Composer/" rel="tag"># Composer</a>
+            <a href="/tags/Gitlab/" rel="tag"># Gitlab</a>
+          
+            <a href="/tags/Docker/" rel="tag"># Docker</a>
           
         </div>
       
@@ -432,8 +448,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/Shijing-Caiwei/" rel="next" title="《诗经·小雅· 采薇》">
-                <i class="fa fa-chevron-left"></i> 《诗经·小雅· 采薇》
+              <a href="/2016/Shijing-Wanqiu/" rel="next" title="《诗经·国风·陈风·宛丘》">
+                <i class="fa fa-chevron-left"></i> 《诗经·国风·陈风·宛丘》
               </a>
             
           </div>
@@ -441,10 +457,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/Shijing-Zhenwei/" rel="prev" title="《诗经·国风·郑风·溱洧》">
-                《诗经·国风·郑风·溱洧》 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -605,7 +617,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题一："><span class="nav-number">1.</span> <span class="nav-text">问题一：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题二："><span class="nav-number">2.</span> <span class="nav-text">问题二：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前记"><span class="nav-number">1.</span> <span class="nav-text">前记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">2.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gitlab-amp-amp-Gitlab-Runner"><span class="nav-number">3.</span> <span class="nav-text">Gitlab &amp;&amp; Gitlab-Runner</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基于原生原方案"><span class="nav-number">3.1.</span> <span class="nav-text">基于原生原方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于Docker新方案"><span class="nav-number">3.2.</span> <span class="nav-text">基于Docker新方案</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -782,9 +794,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://www.jakehu.me/2015/Windows-Composer-Error/';
-          this.page.identifier = '2015/Windows-Composer-Error/';
-          this.page.title = '论如何解决在Windows下使用Composer时出现的这些问题';
+          this.page.url = 'http://www.jakehu.me/2018/gitlab-docker/';
+          this.page.identifier = '2018/gitlab-docker/';
+          this.page.title = '记Gitlab到Docker全过程CI/CD';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://jakehu-1.disqus.com/embed.js';

@@ -287,6 +287,184 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.jakehu.me/2018/gitlab-docker/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="jakehu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="晨曦's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/gitlab-docker/" itemprop="url">记Gitlab到Docker全过程CI/CD</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-26T00:00:00+08:00">
+                2018-11-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术渣/" itemprop="url" rel="index">
+                    <span itemprop="name">技术渣</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/gitlab-docker/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/gitlab-docker/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/gitlab-docker/" class="leancloud_visitors" data-flag-title="记Gitlab到Docker全过程CI/CD">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h3><p>很久都没有写博客了，不是没时间，可能就是纯粹的懒吧。</p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>公司内部版本管理一直以来都是用的<code>Gitlab</code>，而系统早在前年的时候就已经全部上了<code>Docker</code>，<code>gitlab-runner</code>发布过后就一直想利用<code>gitlab-runner</code>进行<code>CI/CD</code>自动化的部署。</p>
+<h3 id="Gitlab-amp-amp-Gitlab-Runner"><a href="#Gitlab-amp-amp-Gitlab-Runner" class="headerlink" title="Gitlab &amp;&amp; Gitlab-Runner"></a>Gitlab &amp;&amp; Gitlab-Runner</h3><h4 id="基于原生原方案"><a href="#基于原生原方案" class="headerlink" title="基于原生原方案"></a>基于原生原方案</h4><p>关于<code>gitlab &amp;&amp; gitlab-runner</code>的安装我这边就不赘述了，不会的可以看官方的文档。</p>
+<p><a href="https://docs.gitlab.com.cn/" target="_blank" rel="noopener">Gitlab</a></p>
+<p><a href="https://docs.gitlab.com.cn/runner/" target="_blank" rel="noopener">Runner的安装和注册</a></p>
+<p>我们在物理机或云上部署的时候一个流程图如下：</p>
+<p><img src="/uploads/2018/gitlab-docker/runner.png"></p>
+<p>从上图我们可以看出，当我们的服务器多了之后每个服务器都需要安装<code>runner</code>服务，这对于我这样懒的人感觉好麻烦的；受不了。</p>
+<p>当然也有可以解决的方案，如：单独用一服务器挂载共享磁盘。</p>
+<h4 id="基于Docker新方案"><a href="#基于Docker新方案" class="headerlink" title="基于Docker新方案"></a>基于Docker新方案</h4><p>今天我们重点来谈谈，<code>gitlab</code>如何和<code>docker</code>完美结合</p>
+<p>先看看看架构图，如下：</p>
+<p><img src="/uploads/2018/gitlab-docker/docker.png"></p>
+<p>接下来我们来说明一哈上面这张图的一个工作流程。</p>
+<blockquote>
+<p>1、开发人员通过本地<code>push</code>代码到<code>gitlab</code>上<br>2、<code>gitlab-runner</code>会根据代码根目录下的<code>gitlab-ci.yml</code>文件执行<code>CI</code>，<code>gitlab-ci.yml</code>使用说明请移步：<a href="https://docs.gitlab.com/ce/ci/yaml/README.html" target="_blank" rel="noopener">gitlab-ci使用说明</a>。<br>3、在<code>CI</code>过程中会去读取你在代码下<code>Dockerfile</code>文件构建镜像。<code>docker</code>的使用我们这里不做过多赘述<br>4、将镜像推送到镜像仓库，可以自建，也可以用像阿里云的仓库<br>5、<code>docker</code>拉去镜像对服务进行部署。</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.jakehu.me/2016/Shijing-Wanqiu/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -950,176 +1128,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.jakehu.me/2015/Yanshu-Hongjianxiaozi/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="jakehu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="晨曦's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2015/Yanshu-Hongjianxiaozi/" itemprop="url">《清平乐·红笺小字》</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-11-20T00:00:00+08:00">
-                2015-11-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/一人一词/" itemprop="url" rel="index">
-                    <span itemprop="name">一人一词</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2015/Yanshu-Hongjianxiaozi/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/Yanshu-Hongjianxiaozi/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2015/Yanshu-Hongjianxiaozi/" class="leancloud_visitors" data-flag-title="《清平乐·红笺小字》">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>这是一首念远怀人的爱情词，是晏殊[艳情]词的代表作之一。运用[雁足传书]和[鱼传尺素]的典故，又化用了崔护《题都城南庄》[人面不知何处去，桃花依旧笑春风]的诗句。</p>
-<p><img src="/uploads/2015/Yanshu-Hongjianxiaozi/20151120132820.jpg"></p>
-<p>红笺小字，说尽平生意。</p>
-<p>鸿雁在云鱼在水，惆怅此情难寄！</p>
-<p>斜阳独倚西楼，遥山恰对帘钩。</p>
-<p>人面不知何处，绿波依旧东流。</p>
-<hr>
-<p>锦书难寄，相思难至</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1172,7 +1180,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1194,7 +1202,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
