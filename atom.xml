@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.jakehu.me/"/>
-  <updated>2018-11-26T06:02:03.068Z</updated>
+  <updated>2018-11-26T06:32:45.578Z</updated>
   <id>http://www.jakehu.me/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mybatis-Plus注解方式自定义分页实现</title>
+    <link href="http://www.jakehu.me/2018/mybatis-plus-page/"/>
+    <id>http://www.jakehu.me/2018/mybatis-plus-page/</id>
+    <published>2018-11-26T06:23:09.000Z</published>
+    <updated>2018-11-26T06:32:45.578Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h3><p>毫无疑问，<code>Mybatis-Plus</code>是优秀的。<br>在<code>Mybatis-Plus</code>官网的文档中，自定义分页只能只支持<code>xml</code>方式，但是鉴于本人对<code>xml</code>并不是太喜欢，而是喜欢用注解的方式。</p><p>于是，记录了在<code>Mybatis-Plus</code>中注解分页方式实现。</p><h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>首先讲一下我的请求：<br><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">controller</span>-&gt;</span><span class="function"><span class="title">service</span>-&gt;</span><span class="function"><span class="title">mapper</span>-&gt;</span>entity</span><br></pre></td></tr></table></figure></p><p><code>UserService.java</code><br><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public <span class="built_in">Object</span> getAll() &#123;</span><br><span class="line">    Page userList = <span class="keyword">new</span> Page&lt;&gt;(<span class="number">1</span>, <span class="number">5</span>);</span><br><span class="line">    <span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="built_in">Object</span>&gt; param = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    param.put(<span class="string">"name"</span>, <span class="string">"测试788"</span>);</span><br><span class="line">    param.put(<span class="string">"page"</span>, userList);</span><br><span class="line">    <span class="built_in">List</span>&lt;<span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="built_in">Object</span>&gt;&gt; userListArr = mapper.getAllUserGoodsSQLPage(param);</span><br><span class="line">    userList.setRecords(userListArr);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> userList;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><code>UserMapper.java</code><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">Select</span>(<span class="string">"&lt;script&gt;SELECT u.id,u.name from "</span> + <span class="keyword">TABLE</span> + <span class="string">" as u "</span> +</span><br><span class="line">        <span class="string">"left join "</span> + G_TABLE + <span class="string">" as g "</span> +</span><br><span class="line">        <span class="string">"on u.id = g.uid "</span> +</span><br><span class="line">        <span class="string">"where u.name =  #&#123;name&#125;"</span> +</span><br><span class="line">        <span class="string">"&lt;if test = 'id != null'&gt;"</span> +</span><br><span class="line">        <span class="string">"   and u.id = #&#123;id&#125;"</span> +</span><br><span class="line">        <span class="string">"&lt;/if&gt;"</span> +</span><br><span class="line">        <span class="string">"&lt;/script&gt;"</span>)</span><br><span class="line"><span class="keyword">List</span>&lt;<span class="keyword">Map</span>&lt;<span class="keyword">String</span>, <span class="keyword">Object</span>&gt;&gt; getAllUserGoodsSQLPage(<span class="keyword">Map</span>&lt;<span class="keyword">String</span>, <span class="keyword">Object</span>&gt; param);</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;前记&quot;&gt;&lt;a href=&quot;#前记&quot; class=&quot;headerlink&quot; title=&quot;前记&quot;&gt;&lt;/a&gt;前记&lt;/h3&gt;&lt;p&gt;毫无疑问，&lt;code&gt;Mybatis-Plus&lt;/code&gt;是优秀的。&lt;br&gt;在&lt;code&gt;Mybatis-Plus&lt;/code&gt;官网的文档
+      
+    
+    </summary>
+    
+      <category term="技术渣" scheme="http://www.jakehu.me/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/"/>
+    
+    
+      <category term="Mysql" scheme="http://www.jakehu.me/tags/Mysql/"/>
+    
+      <category term="Mybatis" scheme="http://www.jakehu.me/tags/Mybatis/"/>
+    
+  </entry>
   
   <entry>
     <title>记Mysql部分用法</title>

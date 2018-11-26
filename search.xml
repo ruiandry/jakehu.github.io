@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Mybatis-Plus注解方式自定义分页实现]]></title>
+    <url>%2F2018%2Fmybatis-plus-page%2F</url>
+    <content type="text"><![CDATA[前记毫无疑问，Mybatis-Plus是优秀的。在Mybatis-Plus官网的文档中，自定义分页只能只支持xml方式，但是鉴于本人对xml并不是太喜欢，而是喜欢用注解的方式。 于是，记录了在Mybatis-Plus中注解分页方式实现。 实现首先讲一下我的请求：1controller-&gt;service-&gt;mapper-&gt;entity UserService.java12345678910public Object getAll() &#123; Page userList = new Page&lt;&gt;(1, 5); Map&lt;String, Object&gt; param = new HashMap&lt;&gt;(); param.put("name", "测试788"); param.put("page", userList); List&lt;Map&lt;String, Object&gt;&gt; userListArr = mapper.getAllUserGoodsSQLPage(param); userList.setRecords(userListArr); return userList;&#125; UserMapper.java123456789@Select("&lt;script&gt;SELECT u.id,u.name from " + TABLE + " as u " + "left join " + G_TABLE + " as g " + "on u.id = g.uid " + "where u.name = #&#123;name&#125;" + "&lt;if test = 'id != null'&gt;" + " and u.id = #&#123;id&#125;" + "&lt;/if&gt;" + "&lt;/script&gt;")List&lt;Map&lt;String, Object&gt;&gt; getAllUserGoodsSQLPage(Map&lt;String, Object&gt; param);]]></content>
+      <categories>
+        <category>技术渣</category>
+      </categories>
+      <tags>
+        <tag>Mysql</tag>
+        <tag>Mybatis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[记Mysql部分用法]]></title>
     <url>%2F2018%2Fmysql-usage%2F</url>
     <content type="text"><![CDATA[JSON1、查询数组中对象 JSON_CONTAINS 用法 12345select * from circulationwhere JSON_CONTAINS(goods-&gt;'$[*].name', '["海带结（香辣味）150克/袋"]', '$')select * from circulationwhere JSON_CONTAINS(goods-&gt;'$[*].gid', '[20]', '$') 2、Json字符串转化为Json对象 CONVERT 用法 1select CONVERT('&#123;"mail": "amy@gmail.com", "name": "Amy"&#125;',JSON) 3、元素转化为数组 JSON_ARRAY 用法 1SELECT JSON_ARRAY(1, "abc", NULL, TRUE, CURTIME()) 常规1、查询重复记录12select * from merchantwhere num in (select num from synk.merchant group by num having count(num) &gt; 1)]]></content>
