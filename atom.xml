@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.jakehu.me/"/>
-  <updated>2018-11-26T07:30:01.587Z</updated>
+  <updated>2018-11-27T06:33:18.286Z</updated>
   <id>http://www.jakehu.me/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Docker时区配置</title>
+    <link href="http://www.jakehu.me/2018/docker-time-zone/"/>
+    <id>http://www.jakehu.me/2018/docker-time-zone/</id>
+    <published>2018-11-27T06:17:45.000Z</published>
+    <updated>2018-11-27T06:33:18.286Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h4><p>公司部分业务使用的是阿里的<code>docker swarm</code>服务，在配置<code>nodejs</code>应用时发现时区不对。</p><h4 id="处理"><a href="#处理" class="headerlink" title="处理"></a>处理</h4><p>记录下自己所选择的方式。</p><p>我选择在<code>Dockerfile</code>文件中做处理，这样利于以后所有引用此镜像的容器时区的正确性。</p><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">RUN</span><span class="bash"> <span class="built_in">echo</span> <span class="string">"Asia/Shanghai"</span> &gt; /etc/timezone \</span></span><br><span class="line"><span class="bash">    &amp;&amp; dpkg-reconfigure -f noninteractive tzdata</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;前记&quot;&gt;&lt;a href=&quot;#前记&quot; class=&quot;headerlink&quot; title=&quot;前记&quot;&gt;&lt;/a&gt;前记&lt;/h4&gt;&lt;p&gt;公司部分业务使用的是阿里的&lt;code&gt;docker swarm&lt;/code&gt;服务，在配置&lt;code&gt;nodejs&lt;/code&gt;应用时发现时区
+      
+    
+    </summary>
+    
+      <category term="技术渣" scheme="http://www.jakehu.me/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/"/>
+    
+    
+      <category term="Docker" scheme="http://www.jakehu.me/tags/Docker/"/>
+    
+  </entry>
   
   <entry>
     <title>这些个Kubernetes集群管理平台你值得拥有</title>
@@ -505,31 +530,6 @@
     
     
       <category term="git" scheme="http://www.jakehu.me/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>你好Hexo，我来了！</title>
-    <link href="http://www.jakehu.me/2015/hello-hexo/"/>
-    <id>http://www.jakehu.me/2015/hello-hexo/</id>
-    <published>2015-10-22T16:00:00.000Z</published>
-    <updated>2018-11-26T06:37:52.877Z</updated>
-    
-    <content type="html"><![CDATA[<p>13年开始玩博客，最开始的时候还比较上心每天都去更新一两篇文章；也把自己的做的一些笔记分享在博客上。后来渐渐的也就失去了兴趣了，好吧，其实要把一件事变成一个习惯还是挺难的。再后来我发现<code>wordpress</code>越来越慢，把啥子<code>Google</code>的一些字体什么的都去掉之后还是很慢。其实也是<code>wordpress</code>都已经进行了这么多的迭代，所以我放弃了<code>wordpress</code>开始寻找他的代替品。</p><p>在放弃<code>Wordpress</code>之后我开始寻找一款极简的博客，我尝试过在IT界不少人推荐的<a href="http://typecho.org/" target="_blank" rel="noopener">Typecho</a>，也试过<code>Github</code>官方推荐的<code>jekyll</code>,直到我看到<code>Hexo</code>；好吧，我承认我找到了我想要的。</p><p>当然在这里也要感谢<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">iissnan</a>为我们带来这么棒棒哒的主题。</p><p>就这样Hexo我来了，哈哈！</p><hr><p>广厦千间，夜眠仅需六尺；家财万贯，日食不过三餐。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;13年开始玩博客，最开始的时候还比较上心每天都去更新一两篇文章；也把自己的做的一些笔记分享在博客上。后来渐渐的也就失去了兴趣了，好吧，其实要把一件事变成一个习惯还是挺难的。再后来我发现&lt;code&gt;wordpress&lt;/code&gt;越来越慢，把啥子&lt;code&gt;Google&lt;/c
-      
-    
-    </summary>
-    
-      <category term="呱唧呱唧" scheme="http://www.jakehu.me/categories/%E5%91%B1%E5%94%A7%E5%91%B1%E5%94%A7/"/>
-    
-    
-      <category term="杂谈" scheme="http://www.jakehu.me/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
