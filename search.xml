@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Docker命令集]]></title>
+    <url>%2F2018%2Fdocker-command%2F</url>
+    <content type="text"><![CDATA[查看docker磁盘使用情况1docker system df kill掉所有容器1docker kill $(docker ps -a -q) 删除所有停止容器1docker rm $(docker ps -a -q) 删除所有镜像1docker rmi $(docker images -q) 参考：Docker命令]]></content>
+      <categories>
+        <category>技术渣</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Docker时区配置]]></title>
     <url>%2F2018%2Fdocker-time-zone%2F</url>
     <content type="text"><![CDATA[前记公司部分业务使用的是阿里的docker swarm服务，在配置nodejs应用时发现时区不对。 处理记录下自己所选择的方式。 我选择在Dockerfile文件中做处理，这样利于以后所有引用此镜像的容器时区的正确性。 12RUN echo "Asia/Shanghai" &gt; /etc/timezone \ &amp;&amp; dpkg-reconfigure -f noninteractive tzdata]]></content>
@@ -54,8 +65,8 @@
         <category>技术渣</category>
       </categories>
       <tags>
-        <tag>Gitlab</tag>
         <tag>Docker</tag>
+        <tag>Gitlab</tag>
       </tags>
   </entry>
   <entry>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.jakehu.me/"/>
-  <updated>2018-11-27T06:33:18.286Z</updated>
+  <updated>2018-11-28T08:45:04.791Z</updated>
   <id>http://www.jakehu.me/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Docker命令集</title>
+    <link href="http://www.jakehu.me/2018/docker-command/"/>
+    <id>http://www.jakehu.me/2018/docker-command/</id>
+    <published>2018-11-28T08:34:24.000Z</published>
+    <updated>2018-11-28T08:45:04.791Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="查看docker磁盘使用情况"><a href="#查看docker磁盘使用情况" class="headerlink" title="查看docker磁盘使用情况"></a>查看docker磁盘使用情况</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker<span class="built_in"> system </span>df</span><br></pre></td></tr></table></figure><h4 id="kill掉所有容器"><a href="#kill掉所有容器" class="headerlink" title="kill掉所有容器"></a>kill掉所有容器</h4><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker kill $<span class="comment">(docker ps -a -q)</span></span><br></pre></td></tr></table></figure><h4 id="删除所有停止容器"><a href="#删除所有停止容器" class="headerlink" title="删除所有停止容器"></a>删除所有停止容器</h4><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm $<span class="comment">(docker ps -a -q)</span></span><br></pre></td></tr></table></figure><h4 id="删除所有镜像"><a href="#删除所有镜像" class="headerlink" title="删除所有镜像"></a>删除所有镜像</h4><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi <span class="variable">$(</span>docker images -q)</span><br></pre></td></tr></table></figure><hr><font color="red"><br>参考：<a href="https://docs.docker.com/engine/reference/commandline/cli/" target="_blank" rel="noopener">Docker命令</a><br></font>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;查看docker磁盘使用情况&quot;&gt;&lt;a href=&quot;#查看docker磁盘使用情况&quot; class=&quot;headerlink&quot; title=&quot;查看docker磁盘使用情况&quot;&gt;&lt;/a&gt;查看docker磁盘使用情况&lt;/h4&gt;&lt;figure class=&quot;highlight 
+      
+    
+    </summary>
+    
+      <category term="技术渣" scheme="http://www.jakehu.me/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/"/>
+    
+    
+      <category term="Docker" scheme="http://www.jakehu.me/tags/Docker/"/>
+    
+  </entry>
   
   <entry>
     <title>Docker时区配置</title>
@@ -145,9 +170,9 @@
       <category term="技术渣" scheme="http://www.jakehu.me/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/"/>
     
     
-      <category term="Gitlab" scheme="http://www.jakehu.me/tags/Gitlab/"/>
-    
       <category term="Docker" scheme="http://www.jakehu.me/tags/Docker/"/>
+    
+      <category term="Gitlab" scheme="http://www.jakehu.me/tags/Gitlab/"/>
     
   </entry>
   
@@ -507,29 +532,6 @@
       <category term="美图" scheme="http://www.jakehu.me/tags/%E7%BE%8E%E5%9B%BE/"/>
     
       <category term="青海" scheme="http://www.jakehu.me/tags/%E9%9D%92%E6%B5%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>说一说，那些年我们一起自建过的Git服务器</title>
-    <link href="http://www.jakehu.me/2015/Git-on-the-Server/"/>
-    <id>http://www.jakehu.me/2015/Git-on-the-Server/</id>
-    <published>2015-10-22T16:00:01.000Z</published>
-    <updated>2018-11-26T06:37:43.421Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Git服务器端搭建，基于ssh协议"><a href="#Git服务器端搭建，基于ssh协议" class="headerlink" title="Git服务器端搭建，基于ssh协议"></a>Git服务器端搭建，基于ssh协议</h3><h4 id="服务端架设空git-repo"><a href="#服务端架设空git-repo" class="headerlink" title="服务端架设空git repo"></a>服务端架设空git repo</h4><p>ssh登录服务器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">groupadd git <span class="comment">#增加git用户组</span></span><br><span class="line">useradd jakehu -g git <span class="comment">#增加名为jakehu的用户属于git用户组</span></span><br><span class="line">ln –s /gitwork /git </span><br><span class="line"><span class="comment">#gitwork为实际工作目录，git为空目录做链接使用，可直接在根目录建立git文件夹即可</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#以下造作操作是以直接在根目录下建立git文件夹为前提</span></span><br><span class="line">chown jakehu.git /git</span><br><span class="line">su jakehu</span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line"><span class="built_in">cd</span> /git</span><br><span class="line"><span class="comment">#空库的目录权限设定为 组内读写</span></span><br><span class="line"><span class="comment">#用--shared  git会自动搞定创建起来的文件目录</span></span><br><span class="line"><span class="comment"># shared 参数很重要</span></span><br><span class="line">git init --bare --shared test.git</span><br></pre></td></tr></table></figure></p><p>到此为止服务器端架设完成<br><a id="more"></a></p><h4 id="客户端生成密钥"><a href="#客户端生成密钥" class="headerlink" title="客户端生成密钥"></a>客户端生成密钥</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">ssh-keygen -b 2048 -t rsa <span class="comment">#生成密钥</span></span><br><span class="line"><span class="comment">#windows生成密钥方式不同,可用Pageant生成密钥</span></span><br></pre></td></tr></table></figure><h4 id="服务器端导入密钥"><a href="#服务器端导入密钥" class="headerlink" title="服务器端导入密钥"></a>服务器端导入密钥</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">su jakehu</span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line"><span class="built_in">cd</span> .ssh</span><br><span class="line">cat id_rsa_jakehu.pub &gt;&gt; authorized_keys</span><br><span class="line">chmod 600 authorized_keys</span><br></pre></td></tr></table></figure><p>最后访问地址: ssh://jakehu@serverIP/git/test.git</p><h4 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h4><p>服务器上自动部署<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root</span><br><span class="line"><span class="built_in">cd</span> /www/ <span class="comment">#网站目录</span></span><br><span class="line">sh git-deploy.sh</span><br><span class="line"><span class="comment">#https://raw.githubusercontent.com/jakehu/tools/master/git-deploy.sh</span></span><br></pre></td></tr></table></figure></p><p>服务器上切换分支测试<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root</span><br><span class="line"><span class="built_in">cd</span> /www/web</span><br><span class="line">git checkout dev</span><br><span class="line">chown -R www:www /www/web</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Git服务器端搭建，基于ssh协议&quot;&gt;&lt;a href=&quot;#Git服务器端搭建，基于ssh协议&quot; class=&quot;headerlink&quot; title=&quot;Git服务器端搭建，基于ssh协议&quot;&gt;&lt;/a&gt;Git服务器端搭建，基于ssh协议&lt;/h3&gt;&lt;h4 id=&quot;服务端架设空git-repo&quot;&gt;&lt;a href=&quot;#服务端架设空git-repo&quot; class=&quot;headerlink&quot; title=&quot;服务端架设空git repo&quot;&gt;&lt;/a&gt;服务端架设空git repo&lt;/h4&gt;&lt;p&gt;ssh登录服务器&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;groupadd git &lt;span class=&quot;comment&quot;&gt;#增加git用户组&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;useradd jakehu -g git &lt;span class=&quot;comment&quot;&gt;#增加名为jakehu的用户属于git用户组&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ln –s /gitwork /git &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#gitwork为实际工作目录，git为空目录做链接使用，可直接在根目录建立git文件夹即可&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#以下造作操作是以直接在根目录下建立git文件夹为前提&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;chown jakehu.git /git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;su jakehu&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; ~&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; /git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#空库的目录权限设定为 组内读写&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#用--shared  git会自动搞定创建起来的文件目录&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# shared 参数很重要&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git init --bare --shared test.git&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;到此为止服务器端架设完成&lt;br&gt;
-    
-    </summary>
-    
-      <category term="服务器" scheme="http://www.jakehu.me/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-    
-      <category term="git" scheme="http://www.jakehu.me/tags/git/"/>
     
   </entry>
   
