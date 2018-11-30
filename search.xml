@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Docker命令集]]></title>
+    <title><![CDATA[Java楞个多优秀的工具类，嗯嗯，快记下来]]></title>
+    <url>%2F2018%2FJava-Utils%2F</url>
+    <content type="text"><![CDATA[commons-lang3概述Apache Commons-Lang3库提供了Java的API的核心类的操作支持。此支持包括处理字符串，数字，日期，并发，对象反射等的方法。 Maven依赖要使用commons-lang3库，只需使用以下依赖项从中央Maven存储库中提取它12345&lt;dependency&gt; &lt;groupId&gt;org.apache.commons&lt;/groupId&gt; &lt;artifactId&gt;commons-lang3&lt;/artifactId&gt; &lt;version&gt;3.8.1&lt;/version&gt;&lt;/dependency&gt; 示例、文档参考文档参考：StringUtils hutool概述Hutool是一个Java工具包，也只是一个工具包，它帮助我们简化每一行代码，减少每一个方法，让Java语言也可以“甜甜的”。 Maven依赖12345&lt;dependency&gt; &lt;groupId&gt;cn.hutool&lt;/groupId&gt; &lt;artifactId&gt;hutool-all&lt;/artifactId&gt; &lt;version&gt;4.2.1&lt;/version&gt;&lt;/dependency&gt; 示例、文档参考文档参考：Hutool]]></content>
+      <categories>
+        <category>技术渣</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>StringUtils</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Docker之命令集]]></title>
     <url>%2F2018%2Fdocker-command%2F</url>
     <content type="text"><![CDATA[查看docker磁盘使用情况1docker system df kill掉所有容器1docker kill $(docker ps -a -q) 删除所有停止容器1docker rm $(docker ps -a -q) 删除所有镜像1docker rmi $(docker images -q) 参考：Docker命令]]></content>
       <categories>
@@ -12,7 +24,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Docker时区配置]]></title>
+    <title><![CDATA[Docker之时区配置]]></title>
     <url>%2F2018%2Fdocker-time-zone%2F</url>
     <content type="text"><![CDATA[前记公司部分业务使用的是阿里的docker swarm服务，在配置nodejs应用时发现时区不对。 处理记录下自己所选择的方式。 我选择在Dockerfile文件中做处理，这样利于以后所有引用此镜像的容器时区的正确性。 12RUN echo "Asia/Shanghai" &gt; /etc/timezone \ &amp;&amp; dpkg-reconfigure -f noninteractive tzdata]]></content>
       <categories>
