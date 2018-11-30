@@ -15,7 +15,7 @@
   <entry>
     <title><![CDATA[Docker之命令集]]></title>
     <url>%2F2018%2Fdocker-command%2F</url>
-    <content type="text"><![CDATA[查看docker磁盘使用情况1docker system df kill掉所有容器1docker kill $(docker ps -a -q) 删除所有停止容器1docker rm $(docker ps -a -q) 删除所有镜像1docker rmi $(docker images -q) 参考：Docker命令]]></content>
+    <content type="text"><![CDATA[查看docker磁盘使用情况1docker system df kill掉所有容器1docker kill $(docker ps -a -q) 删除所有停止容器1docker rm $(docker ps -a -q) 删除所有镜像1docker rmi $(docker images -q) 强制删除镜像 当同一镜像被多个储存库引用时，就需要强制删除镜像 1docker rmi -f 镜像ID 删除tag为的所有镜像1docker images|grep none|awk '&#123;print $3&#125;'|xargs docker rmi 参考：Docker命令]]></content>
       <categories>
         <category>技术渣</category>
       </categories>
