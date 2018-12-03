@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[beanstalkd之Nodejs客户端bsw]]></title>
+    <url>%2F2018%2Fbeanstalkd-bsw%2F</url>
+    <content type="text"><![CDATA[简介Beanstalkd - 一个高性能、轻量级的分布式内存队列系统。 英文协议 中文协议 安装这里我们用Docker来运行。12docker pull schickling/beanstalkddocker run -d -p 11300:11300 schickling/beanstalkd beanstalkd管理WEB平台，主要用来看看以后的任务详情。12docker pull schickling/beanstalkd-consoledocker run -d -p 2080:2080 --link beanstalkd:beanstalkd schickling/beanstalkd-console 通过127.0.0.1:2080访问 使用官方客户端推荐列表Client 下面我们主要介绍Nodejs客户端bsw 客户端安装1npm i bsw --save 客户端示例这里我们用阿里开源框架eggjs做测试。app.js12345678910111213141516171819202122'use strict';const &#123; Consumer &#125; = require('bsw');module.exports = app =&gt; &#123; app.beforeStart(async () =&gt; &#123; const consumer = new Consumer(&#123; host: 'localhost', port: '11300', tube: 'node', async handler(payload, job_info) &#123; console.log('processing job: ', payload); console.log('processing job_info: ', job_info); // 这里进行业务操作 return 'success'; &#125;, &#125;); consumer.on('error', e =&gt; &#123; console.log(e); &#125;); console.log('beanstalkd启动了'); await consumer.start(); &#125;);&#125;; home.js12345678910111213141516171819202122'use strict';const Controller = require('egg').Controller;const &#123; Producer &#125; = require('bsw');class HomeController extends Controller &#123; async index() &#123; const producer = new Producer(&#123; host: 'localhost', port: '11300', tube: 'node', &#125;); await producer.start(); await producer.putJob(&#123; payload: JSON.stringify(&#123; throw: true, result: 'success' &#125;), priority: 0, // 优先级 delay: 30, // 延时单位(s) ttr: 60, // 允许worker执行的最大秒数 &#125;); producer.stop(); this.ctx.body = 'hi, egg'; &#125;&#125;module.exports = HomeController; 天若有情天亦老，月如无恨月长圆]]></content>
+      <categories>
+        <category>技术渣</category>
+      </categories>
+      <tags>
+        <tag>beanstalkd</tag>
+        <tag>Nodejs</tag>
+        <tag>eggjs</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Java楞个多优秀的工具类，嗯嗯，快记下来]]></title>
     <url>%2F2018%2FJava-Utils%2F</url>
     <content type="text"><![CDATA[commons-lang3概述Apache Commons-Lang3库提供了Java的API的核心类的操作支持。此支持包括处理字符串，数字，日期，并发，对象反射等的方法。 Maven依赖要使用commons-lang3库，只需使用以下依赖项从中央Maven存储库中提取它12345&lt;dependency&gt; &lt;groupId&gt;org.apache.commons&lt;/groupId&gt; &lt;artifactId&gt;commons-lang3&lt;/artifactId&gt; &lt;version&gt;3.8.1&lt;/version&gt;&lt;/dependency&gt; 示例、文档参考文档参考：StringUtils hutool概述Hutool是一个Java工具包，也只是一个工具包，它帮助我们简化每一行代码，减少每一个方法，让Java语言也可以“甜甜的”。 Maven依赖12345&lt;dependency&gt; &lt;groupId&gt;cn.hutool&lt;/groupId&gt; &lt;artifactId&gt;hutool-all&lt;/artifactId&gt; &lt;version&gt;4.2.1&lt;/version&gt;&lt;/dependency&gt; 示例、文档参考文档参考：Hutool]]></content>

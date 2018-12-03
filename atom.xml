@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.jakehu.me/"/>
-  <updated>2018-11-30T04:22:25.078Z</updated>
+  <updated>2018-12-03T08:30:26.584Z</updated>
   <id>http://www.jakehu.me/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>beanstalkd之Nodejs客户端bsw</title>
+    <link href="http://www.jakehu.me/2018/beanstalkd-bsw/"/>
+    <id>http://www.jakehu.me/2018/beanstalkd-bsw/</id>
+    <published>2018-12-03T07:53:30.000Z</published>
+    <updated>2018-12-03T08:30:26.584Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p><a href="https://github.com/beanstalkd/beanstalkd" target="_blank" rel="noopener">Beanstalkd</a> - 一个高性能、轻量级的分布式内存队列系统。</p><p><a href="https://github.com/beanstalkd/beanstalkd/blob/master/doc/protocol.txt" target="_blank" rel="noopener">英文协议</a></p><p><a href="https://github.com/beanstalkd/beanstalkd/blob/master/doc/protocol.zh-CN.md" target="_blank" rel="noopener">中文协议</a></p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>这里我们用<code>Docker</code>来运行。<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull schickling/beanstalkd</span><br><span class="line">docker <span class="keyword">run</span><span class="bash"> -d -p 11300:11300 schickling/beanstalkd</span></span><br></pre></td></tr></table></figure></p><p><code>beanstalkd</code>管理<code>WEB</code>平台，主要用来看看以后的任务详情。<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull schickling/beanstalkd-console</span><br><span class="line">docker <span class="built_in">run</span> -d -p <span class="number">2080</span>:<span class="number">2080</span> <span class="comment">--link beanstalkd:beanstalkd schickling/beanstalkd-console</span></span><br></pre></td></tr></table></figure></p><p>通过<code>127.0.0.1:2080</code>访问</p><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>官方客户端推荐列表<a href="https://github.com/beanstalkd/beanstalkd/wiki/Client-Libraries" target="_blank" rel="noopener">Client</a></p><p>下面我们主要介绍<code>Nodejs</code>客户端<code>bsw</code></p><h4 id="客户端安装"><a href="#客户端安装" class="headerlink" title="客户端安装"></a>客户端安装</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="selector-tag">i</span> bsw --save</span><br></pre></td></tr></table></figure><h4 id="客户端示例"><a href="#客户端示例" class="headerlink" title="客户端示例"></a>客户端示例</h4><p>这里我们用阿里开源框架<code>eggjs</code>做测试。<br><code>app.js</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"><span class="keyword">const</span> &#123; Consumer &#125; = <span class="built_in">require</span>(<span class="string">'bsw'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="params">app</span> =&gt;</span> &#123;</span><br><span class="line">  app.beforeStart(<span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> consumer = <span class="keyword">new</span> Consumer(&#123;</span><br><span class="line">      host: <span class="string">'localhost'</span>,</span><br><span class="line">      port: <span class="string">'11300'</span>,</span><br><span class="line">      tube: <span class="string">'node'</span>,</span><br><span class="line">      <span class="keyword">async</span> handler(payload, job_info) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'processing job: '</span>, payload);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'processing job_info: '</span>, job_info);</span><br><span class="line">        <span class="comment">// 这里进行业务操作</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'success'</span>;</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;);</span><br><span class="line">    consumer.on(<span class="string">'error'</span>, e =&gt; &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(e);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'beanstalkd启动了'</span>);</span><br><span class="line">    <span class="keyword">await</span> consumer.start();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p><p><code>home.js</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"><span class="keyword">const</span> Controller = <span class="built_in">require</span>(<span class="string">'egg'</span>).Controller;</span><br><span class="line"><span class="keyword">const</span> &#123; Producer &#125; = <span class="built_in">require</span>(<span class="string">'bsw'</span>);</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HomeController</span> <span class="keyword">extends</span> <span class="title">Controller</span> </span>&#123;</span><br><span class="line">  <span class="keyword">async</span> index() &#123;</span><br><span class="line">    <span class="keyword">const</span> producer = <span class="keyword">new</span> Producer(&#123;</span><br><span class="line">      host: <span class="string">'localhost'</span>,</span><br><span class="line">      port: <span class="string">'11300'</span>,</span><br><span class="line">      tube: <span class="string">'node'</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">await</span> producer.start();</span><br><span class="line">    <span class="keyword">await</span> producer.putJob(&#123;</span><br><span class="line">      payload: <span class="built_in">JSON</span>.stringify(&#123; <span class="attr">throw</span>: <span class="literal">true</span>, <span class="attr">result</span>: <span class="string">'success'</span> &#125;),</span><br><span class="line">      priority: <span class="number">0</span>, <span class="comment">// 优先级</span></span><br><span class="line">      delay: <span class="number">30</span>, <span class="comment">// 延时单位(s)</span></span><br><span class="line">      ttr: <span class="number">60</span>, <span class="comment">// 允许worker执行的最大秒数</span></span><br><span class="line">    &#125;);</span><br><span class="line">    producer.stop();</span><br><span class="line">    <span class="keyword">this</span>.ctx.body = <span class="string">'hi, egg'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports = HomeController;</span><br></pre></td></tr></table></figure></p><hr><p>天若有情天亦老，月如无恨月长圆</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/beanstalkd/beanstalkd&quot; target=&quot;_blank&quot; rel
+      
+    
+    </summary>
+    
+      <category term="技术渣" scheme="http://www.jakehu.me/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/"/>
+    
+    
+      <category term="beanstalkd" scheme="http://www.jakehu.me/tags/beanstalkd/"/>
+    
+      <category term="Nodejs" scheme="http://www.jakehu.me/tags/Nodejs/"/>
+    
+      <category term="eggjs" scheme="http://www.jakehu.me/tags/eggjs/"/>
+    
+  </entry>
   
   <entry>
     <title>Java楞个多优秀的工具类，嗯嗯，快记下来</title>
@@ -503,35 +532,6 @@
       <category term="Openwrt" scheme="http://www.jakehu.me/tags/Openwrt/"/>
     
       <category term="Shadowsocks" scheme="http://www.jakehu.me/tags/Shadowsocks/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>世事无常，荣枯随缘，泰然处之</title>
-    <link href="http://www.jakehu.me/2015/life-is-changeable/"/>
-    <id>http://www.jakehu.me/2015/life-is-changeable/</id>
-    <published>2015-10-25T16:00:01.000Z</published>
-    <updated>2018-11-26T06:37:58.576Z</updated>
-    
-    <content type="html"><![CDATA[<p>人生的境遇并没有绝对的好坏之别，佛说:物随心转,境由心造,烦恼皆心生。自性的清明、智慧，才是一切意念的本源。日月经年，世事无常；人生如月，盈亏有间。人生在世，难免有忠奸善恶，是非情仇，得失成败，荣辱浮沉。我们应当不逃避。不强求，一切随缘，任由世事变迁，宠辱皆不惊，以一颗恬然、淡定的心，泰然处之。</p><p><img src="/uploads/2015/life-is-changeable/54114822.jpg"></p><p>从前，山上有座古刹，里面住着师徒四人。一天，师父为考验弟子们的修行功夫，与他们一起来到寺庙前的两棵树前。</p><p>其中一棵尚未到秋天枝干就枯瘪了，叶子也凋零得差不多，恐怕早已病死了。另一棵则郁郁葱葱。深绿的叶子像涂了层蜡似的，在阳光下泛着耀眼的光泽，一副欣欣向荣的样子。</p><p>这时，师父发话了：“你们说说，这两棵树，是枯的好，还是荣的好？”</p><p>大徒弟抢着回答：“荣的好！”</p><p>二徒弟接着说：“枯的好！”</p><p>唯有天资聪颖的小徒弟沉思片刻，望着远方绵亘的山脉，缓缓地说：“枯也随它，荣也随它……”</p><a id="more"></a><p>“春有百花秋有月，夏有凉风冬有雪。若无闲事挂心头，人间处处好时节。”人生的境遇并没有绝对的好坏之别，而常人眼里之所以有顺逆、褒贬等种种色彩，是缘于内心的染缸。境由心生，一切唯心造。由此可见，自性的清明、智慧，才是一切意念的本源。</p><p>日月经年，世事无常；人生如月，盈亏有间。人生在世，难免有忠奸善恶，是非情仇，得失成败，荣辱浮沉。我们应当不逃避。不强求，一切随缘，任由世事变迁，宠辱皆不惊，以一颗恬然、淡定的心，泰然处之。</p><p>世尊说，一个人如果有觉悟的人生，虽然睡卧草皮，也会觉得快乐。不懂得人生的人，就算跑到天堂去，也活得不开心。如怀有一颗智慧、明朗的心，洞察世事人情，透析宇宙、人生的真理，那么，一切的横逆苦厄都是圆满的，就日日是好日，夜夜是清宵……</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;人生的境遇并没有绝对的好坏之别，佛说:物随心转,境由心造,烦恼皆心生。自性的清明、智慧，才是一切意念的本源。日月经年，世事无常；人生如月，盈亏有间。人生在世，难免有忠奸善恶，是非情仇，得失成败，荣辱浮沉。我们应当不逃避。不强求，一切随缘，任由世事变迁，宠辱皆不惊，以一颗恬然、淡定的心，泰然处之。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/uploads/2015/life-is-changeable/54114822.jpg&quot;&gt;&lt;/p&gt;
-&lt;p&gt;从前，山上有座古刹，里面住着师徒四人。一天，师父为考验弟子们的修行功夫，与他们一起来到寺庙前的两棵树前。&lt;/p&gt;
-&lt;p&gt;其中一棵尚未到秋天枝干就枯瘪了，叶子也凋零得差不多，恐怕早已病死了。另一棵则郁郁葱葱。深绿的叶子像涂了层蜡似的，在阳光下泛着耀眼的光泽，一副欣欣向荣的样子。&lt;/p&gt;
-&lt;p&gt;这时，师父发话了：“你们说说，这两棵树，是枯的好，还是荣的好？”&lt;/p&gt;
-&lt;p&gt;大徒弟抢着回答：“荣的好！”&lt;/p&gt;
-&lt;p&gt;二徒弟接着说：“枯的好！”&lt;/p&gt;
-&lt;p&gt;唯有天资聪颖的小徒弟沉思片刻，望着远方绵亘的山脉，缓缓地说：“枯也随它，荣也随它……”&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="呱唧呱唧" scheme="http://www.jakehu.me/categories/%E5%91%B1%E5%94%A7%E5%91%B1%E5%94%A7/"/>
-    
-    
-      <category term="杂谈" scheme="http://www.jakehu.me/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
