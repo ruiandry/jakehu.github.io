@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.jakehu.me/"/>
-  <updated>2018-12-03T08:30:26.584Z</updated>
+  <updated>2018-12-04T02:01:48.196Z</updated>
   <id>http://www.jakehu.me/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何使用Time Machine将文件从Mac备份至Synology NAS</title>
+    <link href="http://www.jakehu.me/2018/Nas-Time-Machine/"/>
+    <id>http://www.jakehu.me/2018/Nas-Time-Machine/</id>
+    <published>2018-12-04T01:31:34.000Z</published>
+    <updated>2018-12-04T02:01:48.196Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="官宣文档"><a href="#官宣文档" class="headerlink" title="官宣文档"></a>官宣文档</h3><p>官宣文档没毛病，重点说说注意事项<br><a href="https://www.synology.com/zh-cn/knowledgebase/DSM/tutorial/Backup_Restore/How_to_back_up_files_from_Mac_to_Synology_NAS_with_Time_Machine" target="_blank" rel="noopener">文档</a></p><h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><blockquote><p>对于 macOS Sierra 和更高版本，Time Machine 使用 SMB 代替 AFP 作为默认协议。</p></blockquote><p>Mac(Finder)：<code>smb://JakehuNas</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;官宣文档&quot;&gt;&lt;a href=&quot;#官宣文档&quot; class=&quot;headerlink&quot; title=&quot;官宣文档&quot;&gt;&lt;/a&gt;官宣文档&lt;/h3&gt;&lt;p&gt;官宣文档没毛病，重点说说注意事项&lt;br&gt;&lt;a href=&quot;https://www.synology.com/zh-cn/kn
+      
+    
+    </summary>
+    
+      <category term="技术渣" scheme="http://www.jakehu.me/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/"/>
+    
+    
+      <category term="Synology" scheme="http://www.jakehu.me/tags/Synology/"/>
+    
+      <category term="NAS" scheme="http://www.jakehu.me/tags/NAS/"/>
+    
+  </entry>
   
   <entry>
     <title>beanstalkd之Nodejs客户端bsw</title>
@@ -50,15 +77,17 @@
     <link href="http://www.jakehu.me/2018/Java-Utils/"/>
     <id>http://www.jakehu.me/2018/Java-Utils/</id>
     <published>2018-11-30T02:28:01.000Z</published>
-    <updated>2018-11-30T04:22:25.078Z</updated>
+    <updated>2018-12-03T09:31:17.522Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="commons-lang3"><a href="#commons-lang3" class="headerlink" title="commons-lang3"></a>commons-lang3</h3><h5 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h5><p><code>Apache Commons-Lang3</code>库提供了<code>Java</code>的<code>API</code>的核心类的操作支持。此支持包括处理字符串，数字，日期，并发，对象反射等的方法。</p><h5 id="Maven依赖"><a href="#Maven依赖" class="headerlink" title="Maven依赖"></a>Maven依赖</h5><p>要使用<code>commons-lang3</code>库，只需使用以下依赖项从中央Maven存储库中提取它<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.commons<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-lang3<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.8.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p><h5 id="示例、文档参考"><a href="#示例、文档参考" class="headerlink" title="示例、文档参考"></a>示例、文档参考</h5><p>文档参考：<a href="https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/StringUtils.html" target="_blank" rel="noopener">StringUtils</a></p><h3 id="hutool"><a href="#hutool" class="headerlink" title="hutool"></a>hutool</h3><h5 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h5><p><code>Hutool</code>是一个<code>Java</code>工具包，也只是一个工具包，它帮助我们简化每一行代码，减少每一个方法，让<code>Java</code>语言也可以“甜甜的”。</p><h5 id="Maven依赖-1"><a href="#Maven依赖-1" class="headerlink" title="Maven依赖"></a>Maven依赖</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>cn.hutool<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hutool-all<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.2.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure><h5 id="示例、文档参考-1"><a href="#示例、文档参考-1" class="headerlink" title="示例、文档参考"></a>示例、文档参考</h5><p>文档参考：<a href="https://hutool.cn/docs/#/" target="_blank" rel="noopener">Hutool</a></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="commons-lang3"><a href="#commons-lang3" class="headerlink" title="commons-lang3"></a>commons-lang3</h3><blockquote><p>概述</p></blockquote><p><code>Apache Commons-Lang3</code>库提供了<code>Java</code>的<code>API</code>的核心类的操作支持。此支持包括处理字符串，数字，日期，并发，对象反射等的方法。</p><blockquote><p>Maven依赖</p></blockquote><p>要使用<code>commons-lang3</code>库，只需使用以下依赖项从中央Maven存储库中提取它<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.commons<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-lang3<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.8.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p><blockquote><p>示例、文档参考</p></blockquote><p>文档参考：<a href="https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/StringUtils.html" target="_blank" rel="noopener">StringUtils</a></p><h3 id="Hutool"><a href="#Hutool" class="headerlink" title="Hutool"></a>Hutool</h3><blockquote><p>概述</p></blockquote><p><code>Hutool</code>是一个<code>Java</code>工具包，也只是一个工具包，它帮助我们简化每一行代码，减少每一个方法，让<code>Java</code>语言也可以“甜甜的”。</p><blockquote><p>Maven依赖</p></blockquote><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>cn.hutool<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hutool-all<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.2.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure><blockquote><p>示例、文档参考</p></blockquote><p>文档参考：<a href="https://hutool.cn/docs/#/" target="_blank" rel="noopener">Hutool</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;commons-lang3&quot;&gt;&lt;a href=&quot;#commons-lang3&quot; class=&quot;headerlink&quot; title=&quot;commons-lang3&quot;&gt;&lt;/a&gt;commons-lang3&lt;/h3&gt;&lt;h5 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; cla
+        &lt;h3 id=&quot;commons-lang3&quot;&gt;&lt;a href=&quot;#commons-lang3&quot; class=&quot;headerlink&quot; title=&quot;commons-lang3&quot;&gt;&lt;/a&gt;commons-lang3&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;概述&lt;/p&gt;
+&lt;/bloc
       
     
     </summary>
@@ -506,32 +535,6 @@
       <category term="Linux" scheme="http://www.jakehu.me/tags/Linux/"/>
     
       <category term="Memcached" scheme="http://www.jakehu.me/tags/Memcached/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TP-Link 703N路由器刷Openwrt+Shadowsocks实现OpenWRT 路由器自动翻墙</title>
-    <link href="http://www.jakehu.me/2015/TP-Link-703N-Openwrt-Shadowsocks/"/>
-    <id>http://www.jakehu.me/2015/TP-Link-703N-Openwrt-Shadowsocks/</id>
-    <published>2015-10-26T16:00:00.000Z</published>
-    <updated>2018-11-26T06:38:43.036Z</updated>
-    
-    <content type="html"><![CDATA[<p>说明：此篇文章是作者刷机过程中遇到的一些问题和解决方案，其中有自己的也有其他网友提供的一些方案；希望这篇文章能够帮助到大家。</p><h3 id="一、前往Openwrt官网下载703n官方固件，我下载的是最新的版本。"><a href="#一、前往Openwrt官网下载703n官方固件，我下载的是最新的版本。" class="headerlink" title="一、前往Openwrt官网下载703n官方固件，我下载的是最新的版本。"></a>一、前往Openwrt官网下载703n官方固件，我下载的是最新的版本。</h3><p><a href="http://downloads.openwrt.org/barrier_breaker/14.07/ar71xx/generic/" target="_blank" rel="noopener">http://downloads.openwrt.org/barrier_breaker/14.07/ar71xx/generic/</a></p><h3 id="二、进入原路由器（192-168-1-1）在【系统工具】-gt-【软件升级】中升级刚才在Openwrt官网下载的固件。"><a href="#二、进入原路由器（192-168-1-1）在【系统工具】-gt-【软件升级】中升级刚才在Openwrt官网下载的固件。" class="headerlink" title="二、进入原路由器（192.168.1.1）在【系统工具】-&gt;【软件升级】中升级刚才在Openwrt官网下载的固件。"></a>二、进入原路由器（192.168.1.1）在【系统工具】-&gt;【软件升级】中升级刚才在Openwrt官网下载的固件。</h3><h4 id="（1）首先用一根网线将703N的Lan口和你电脑相连，电脑上设置为DHCP模式。"><a href="#（1）首先用一根网线将703N的Lan口和你电脑相连，电脑上设置为DHCP模式。" class="headerlink" title="（1）首先用一根网线将703N的Lan口和你电脑相连，电脑上设置为DHCP模式。"></a>（1）首先用一根网线将703N的Lan口和你电脑相连，电脑上设置为DHCP模式。</h4><h4 id="（2）然后运行cmd-exe，输入telnet-192-168-1-1成功后出现OpenWrt的欢迎界面。"><a href="#（2）然后运行cmd-exe，输入telnet-192-168-1-1成功后出现OpenWrt的欢迎界面。" class="headerlink" title="（2）然后运行cmd.exe，输入telnet 192.168.1.1成功后出现OpenWrt的欢迎界面。"></a>（2）然后运行cmd.exe，输入telnet 192.168.1.1成功后出现OpenWrt的欢迎界面。</h4><h4 id="（3）输入passwd更改root密码后dropbear-SSH-服务-就运行了，输入exit退出telnet；以后就可以通过ssh管理OpenWrt。"><a href="#（3）输入passwd更改root密码后dropbear-SSH-服务-就运行了，输入exit退出telnet；以后就可以通过ssh管理OpenWrt。" class="headerlink" title="（3）输入passwd更改root密码后dropbear(SSH 服务)就运行了，输入exit退出telnet；以后就可以通过ssh管理OpenWrt。"></a>（3）输入passwd更改root密码后dropbear(SSH 服务)就运行了，输入exit退出telnet；以后就可以通过ssh管理OpenWrt。</h4><p>注：最新版默认已经安装和启用Luci管理界面，你可以直接通过访问192.168.1.1进入Luci Web管理界面。<br><a id="more"></a><br>默认Luci管理界面是没有中文的，中文包安装如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">opkg update</span><br><span class="line">opkg install luci-i18n-chinese</span><br></pre></td></tr></table></figure></p><p>安装好后可以前往WEB界面更改<br><img src="/uploads/2015/TP-Link-703N-Openwrt-Shadowsocks/62972015.jpg" alt=""></p><h3 id="三、因为703N的Flash只有4M，做完上述步骤之后就只有400KB左右了；于是我选择了在703N上面挂在了一个8G的U盘来扩展。"><a href="#三、因为703N的Flash只有4M，做完上述步骤之后就只有400KB左右了；于是我选择了在703N上面挂在了一个8G的U盘来扩展。" class="headerlink" title="三、因为703N的Flash只有4M，做完上述步骤之后就只有400KB左右了；于是我选择了在703N上面挂在了一个8G的U盘来扩展。"></a>三、因为703N的Flash只有4M，做完上述步骤之后就只有400KB左右了；于是我选择了在703N上面挂在了一个8G的U盘来扩展。</h3><h4 id="（1）在Linux系统下将8G的U盘分为两个区，一个区2G为swap格式作为缓存区用，其他空间为ext4格式。（Linux系统下给U盘分区可以用GParted这款软件）"><a href="#（1）在Linux系统下将8G的U盘分为两个区，一个区2G为swap格式作为缓存区用，其他空间为ext4格式。（Linux系统下给U盘分区可以用GParted这款软件）" class="headerlink" title="（1）在Linux系统下将8G的U盘分为两个区，一个区2G为swap格式作为缓存区用，其他空间为ext4格式。（Linux系统下给U盘分区可以用GParted这款软件）"></a>（1）在Linux系统下将8G的U盘分为两个区，一个区2G为swap格式作为缓存区用，其他空间为ext4格式。（Linux系统下给U盘分区可以用GParted这款软件）</h4><h4 id="（2）挂载U盘"><a href="#（2）挂载U盘" class="headerlink" title="（2）挂载U盘"></a>（2）挂载U盘</h4><p>安装必须的包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">opkg update</span><br><span class="line">opkg install kmod-usb-storage block-mount kmod-fs-ext4</span><br></pre></td></tr></table></figure></p><p>将U盘插上，执行”block info”命令，看下U盘是否已被识别，如下图，其中中sda1、sda2为U盘分区：<br><img src="/uploads/2015/TP-Link-703N-Openwrt-Shadowsocks/64175937.jpg" alt=""><br>安装完成以后,挂载u盘.如下命令将默认的系统盘转移到u盘中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sda1 /mnt</span><br><span class="line">mkdir /tmp/root</span><br><span class="line">mount -o <span class="built_in">bind</span> / /tmp/root</span><br><span class="line">cp /tmp/root/* /mnt -a</span><br><span class="line">umount /tmp/root</span><br></pre></td></tr></table></figure></p><p>修改 /etc/config/fstab 文件,让系统启动自动挂载,修改成如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">config mount</span><br><span class="line">        option target   /overlay</span><br><span class="line">        option device   /dev/sda1</span><br><span class="line">        option fstype   ext4</span><br><span class="line">        option options  rw,sync</span><br><span class="line">        option enabled  1</span><br><span class="line">        option enabled_fsck 0</span><br></pre></td></tr></table></figure></p><p>执行如下命令让其生效<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/fstab <span class="built_in">enable</span></span><br></pre></td></tr></table></figure></p><p>设置并激活 swap 分区,修改 fstab 文件,激活<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkswap /dev/sda2</span><br><span class="line">config swap</span><br><span class="line">        option device   /dev/sda2</span><br><span class="line">        option enabled  1</span><br></pre></td></tr></table></figure></p><p>重启路由器，再次”df -h”一下，可以看到路由器的空间已经扩展成功了。<br><img src="/uploads/2015/TP-Link-703N-Openwrt-Shadowsocks/12133462.jpg" alt=""></p><h3 id="四、接下来我们就来安装Shadowsocks，这步已经有网友有成熟案例和教程了。我这里就不多说了，具体请前往："><a href="#四、接下来我们就来安装Shadowsocks，这步已经有网友有成熟案例和教程了。我这里就不多说了，具体请前往：" class="headerlink" title="四、接下来我们就来安装Shadowsocks，这步已经有网友有成熟案例和教程了。我这里就不多说了，具体请前往："></a>四、接下来我们就来安装Shadowsocks，这步已经有网友有成熟案例和教程了。我这里就不多说了，具体请前往：</h3><p><a href="http://cokebar.info/archives/664" target="_blank" rel="noopener">http://cokebar.info/archives/664</a><br>按上面的教程设置好了就只能正常的使用和翻墙了。<br>这里我也秀一张最后的成品<br><img src="/uploads/2015/TP-Link-703N-Openwrt-Shadowsocks/61677427.jpg" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;说明：此篇文章是作者刷机过程中遇到的一些问题和解决方案，其中有自己的也有其他网友提供的一些方案；希望这篇文章能够帮助到大家。&lt;/p&gt;
-&lt;h3 id=&quot;一、前往Openwrt官网下载703n官方固件，我下载的是最新的版本。&quot;&gt;&lt;a href=&quot;#一、前往Openwrt官网下载703n官方固件，我下载的是最新的版本。&quot; class=&quot;headerlink&quot; title=&quot;一、前往Openwrt官网下载703n官方固件，我下载的是最新的版本。&quot;&gt;&lt;/a&gt;一、前往Openwrt官网下载703n官方固件，我下载的是最新的版本。&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://downloads.openwrt.org/barrier_breaker/14.07/ar71xx/generic/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://downloads.openwrt.org/barrier_breaker/14.07/ar71xx/generic/&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;二、进入原路由器（192-168-1-1）在【系统工具】-gt-【软件升级】中升级刚才在Openwrt官网下载的固件。&quot;&gt;&lt;a href=&quot;#二、进入原路由器（192-168-1-1）在【系统工具】-gt-【软件升级】中升级刚才在Openwrt官网下载的固件。&quot; class=&quot;headerlink&quot; title=&quot;二、进入原路由器（192.168.1.1）在【系统工具】-&amp;gt;【软件升级】中升级刚才在Openwrt官网下载的固件。&quot;&gt;&lt;/a&gt;二、进入原路由器（192.168.1.1）在【系统工具】-&amp;gt;【软件升级】中升级刚才在Openwrt官网下载的固件。&lt;/h3&gt;&lt;h4 id=&quot;（1）首先用一根网线将703N的Lan口和你电脑相连，电脑上设置为DHCP模式。&quot;&gt;&lt;a href=&quot;#（1）首先用一根网线将703N的Lan口和你电脑相连，电脑上设置为DHCP模式。&quot; class=&quot;headerlink&quot; title=&quot;（1）首先用一根网线将703N的Lan口和你电脑相连，电脑上设置为DHCP模式。&quot;&gt;&lt;/a&gt;（1）首先用一根网线将703N的Lan口和你电脑相连，电脑上设置为DHCP模式。&lt;/h4&gt;&lt;h4 id=&quot;（2）然后运行cmd-exe，输入telnet-192-168-1-1成功后出现OpenWrt的欢迎界面。&quot;&gt;&lt;a href=&quot;#（2）然后运行cmd-exe，输入telnet-192-168-1-1成功后出现OpenWrt的欢迎界面。&quot; class=&quot;headerlink&quot; title=&quot;（2）然后运行cmd.exe，输入telnet 192.168.1.1成功后出现OpenWrt的欢迎界面。&quot;&gt;&lt;/a&gt;（2）然后运行cmd.exe，输入telnet 192.168.1.1成功后出现OpenWrt的欢迎界面。&lt;/h4&gt;&lt;h4 id=&quot;（3）输入passwd更改root密码后dropbear-SSH-服务-就运行了，输入exit退出telnet；以后就可以通过ssh管理OpenWrt。&quot;&gt;&lt;a href=&quot;#（3）输入passwd更改root密码后dropbear-SSH-服务-就运行了，输入exit退出telnet；以后就可以通过ssh管理OpenWrt。&quot; class=&quot;headerlink&quot; title=&quot;（3）输入passwd更改root密码后dropbear(SSH 服务)就运行了，输入exit退出telnet；以后就可以通过ssh管理OpenWrt。&quot;&gt;&lt;/a&gt;（3）输入passwd更改root密码后dropbear(SSH 服务)就运行了，输入exit退出telnet；以后就可以通过ssh管理OpenWrt。&lt;/h4&gt;&lt;p&gt;注：最新版默认已经安装和启用Luci管理界面，你可以直接通过访问192.168.1.1进入Luci Web管理界面。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="技术渣" scheme="http://www.jakehu.me/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/"/>
-    
-    
-      <category term="Openwrt" scheme="http://www.jakehu.me/tags/Openwrt/"/>
-    
-      <category term="Shadowsocks" scheme="http://www.jakehu.me/tags/Shadowsocks/"/>
     
   </entry>
   
