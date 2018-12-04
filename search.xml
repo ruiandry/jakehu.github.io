@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Next之Leancloud访客统计v6.6.0配置]]></title>
+    <url>%2F2018%2Fnext-leancloud%2F</url>
+    <content type="text"><![CDATA[前因版本：NexT.Pisces v6.6.0Error： 阅读次数：Counter not initialized! See more at console err msg. 解决出现上述之错误，遂查看配置文件之说明1234567891011# Show number of visitors to each article.# You can visit https://leancloud.cn get AppID and AppKey.leancloud_visitors: enable: true app_id: &lt;&lt;your app id&gt;&gt; app_key: &lt;&lt;your app key&gt;&gt; # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security # If you don't care about security in lc counter and just want to use it directly # (without hexo-leancloud-counter-security plugin), set the `security` to `false`. security: true betterPerformance: false 如上述两个解决办法： hexo-leancloud-counter-securitysecurity: false 因为懒所以选择了第二方案。]]></content>
+      <categories>
+        <category>技术渣</category>
+      </categories>
+      <tags>
+        <tag>Next</tag>
+        <tag>Leancloud</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[如何使用Time Machine将文件从Mac备份至Synology NAS]]></title>
     <url>%2F2018%2FNas-Time-Machine%2F</url>
     <content type="text"><![CDATA[官宣文档官宣文档没毛病，重点说说注意事项文档 注意事项 对于 macOS Sierra 和更高版本，Time Machine 使用 SMB 代替 AFP 作为默认协议。 Mac(Finder)：smb://JakehuNas]]></content>

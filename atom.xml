@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.jakehu.me/"/>
-  <updated>2018-12-04T02:01:48.196Z</updated>
+  <updated>2018-12-04T02:21:39.760Z</updated>
   <id>http://www.jakehu.me/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Next之Leancloud访客统计v6.6.0配置</title>
+    <link href="http://www.jakehu.me/2018/next-leancloud/"/>
+    <id>http://www.jakehu.me/2018/next-leancloud/</id>
+    <published>2018-12-04T02:17:21.000Z</published>
+    <updated>2018-12-04T02:21:39.760Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前因"><a href="#前因" class="headerlink" title="前因"></a>前因</h3><p>版本：<code>NexT.Pisces v6.6.0</code><br>Error： <code>阅读次数：Counter not initialized! See more at console err msg.</code></p><h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>出现上述之错误，遂查看配置文件之说明<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Show number of visitors to each article.</span></span><br><span class="line"><span class="comment"># You can visit https://leancloud.cn get AppID and AppKey.</span></span><br><span class="line"><span class="attr">leancloud_visitors:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  app_id:</span> <span class="string">&lt;&lt;your</span> <span class="string">app</span> <span class="string">id&gt;&gt;</span></span><br><span class="line"><span class="attr">  app_key:</span> <span class="string">&lt;&lt;your</span> <span class="string">app</span> <span class="string">key&gt;&gt;</span></span><br><span class="line">  <span class="comment"># Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security</span></span><br><span class="line">  <span class="comment"># If you don't care about security in lc counter and just want to use it directly</span></span><br><span class="line">  <span class="comment"># (without hexo-leancloud-counter-security plugin), set the `security` to `false`.</span></span><br><span class="line"><span class="attr">  security:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  betterPerformance:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></p><p>如上述两个解决办法：</p><blockquote><p>hexo-leancloud-counter-security<br>security: false</p></blockquote><p>因为懒所以选择了第二方案。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;前因&quot;&gt;&lt;a href=&quot;#前因&quot; class=&quot;headerlink&quot; title=&quot;前因&quot;&gt;&lt;/a&gt;前因&lt;/h3&gt;&lt;p&gt;版本：&lt;code&gt;NexT.Pisces v6.6.0&lt;/code&gt;&lt;br&gt;Error： &lt;code&gt;阅读次数：Counter not in
+      
+    
+    </summary>
+    
+      <category term="技术渣" scheme="http://www.jakehu.me/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/"/>
+    
+    
+      <category term="Next" scheme="http://www.jakehu.me/tags/Next/"/>
+    
+      <category term="Leancloud" scheme="http://www.jakehu.me/tags/Leancloud/"/>
+    
+  </entry>
   
   <entry>
     <title>如何使用Time Machine将文件从Mac备份至Synology NAS</title>
@@ -510,31 +537,6 @@
     
       <category term="在水一方" scheme="http://www.jakehu.me/categories/%E5%9C%A8%E6%B0%B4%E4%B8%80%E6%96%B9/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>唉，找不到Windows下Memcached的php扩展还是自己在Linux上编译吧！</title>
-    <link href="http://www.jakehu.me/2015/Linux-install-php-extension/"/>
-    <id>http://www.jakehu.me/2015/Linux-install-php-extension/</id>
-    <published>2015-10-26T16:00:01.000Z</published>
-    <updated>2018-11-26T06:38:03.444Z</updated>
-    
-    <content type="html"><![CDATA[<p>想在Windows上安装个Memcached的php扩展真是找了好多地方都没找到，Windows上自己编译起来也非常的麻烦。算了吧还是Linux方便，走你：<br><img src="/uploads/2015/Linux-install-php-extension/20151027125619.jpg" alt=""><br>Memcached扩展需要安装libmemcached，因为该扩展是依赖libmemcached的API。所以首先我们必须安装libmemcached：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget https://launchpad.net/libmemcached/1.0/1.0.18/+download/libmemcached-1.0.18.tar.gz</span><br><span class="line">tar zxvf libmemcached-1.0.18.tar.gz</span><br><span class="line"><span class="built_in">cd</span> libmemcached-1.0.18</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure></p><p>安装完成后我们可以发现libmemcached被安装在了<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/include/</span>libmemcached</span><br></pre></td></tr></table></figure></p><a id="more"></a><p>接下来找到php中Memcached扩展页面<a href="http://pecl.php.net/package/memcached" target="_blank" rel="noopener">http://pecl.php.net/package/memcached</a>并下载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget http://pecl.php.net/get/memcached-2.2.0.tgz</span><br><span class="line">tar xvzf memcached-2.2.0.tgz</span><br><span class="line"><span class="built_in">cd</span> memcached-2.2.0</span><br></pre></td></tr></table></figure></p><p>在编译之前我们要确认php-devel是否已经安装，如果没有安装请使用(Centos)<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> php-devel</span><br></pre></td></tr></table></figure></p><p>安装；如果已经安装好接下来我们就可以编译了。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">phpize</span><br><span class="line">./configure --with-php-config=/usr/<span class="built_in">local</span>/php-5.6.4/bin/php-config --<span class="built_in">disable</span>-memcached-sasl</span><br><span class="line">make</span><br><span class="line">make <span class="built_in">test</span></span><br></pre></td></tr></table></figure></p><p>然后我们可以在<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/root/memcached<span class="number">-2.2</span><span class="number">.0</span>/modules</span><br></pre></td></tr></table></figure></p><p>目录下面找到 memcached.so,我们只需要将memcached.so移动到PHP环境所在的ext文件夹内然后再配置php.ini即可<br><strong>注：以上安装过程中出现以下错误可以按下面的解决办法解决</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#configure: error: no, sasl.h is not available. Run configure with --disable-memcached-sasl to disable this check</span></span><br><span class="line"><span class="comment">#如果出现上面错误则运行以下代码</span></span><br><span class="line">yum install cyrus-sasl-devel</span><br></pre></td></tr></table></figure></p><p>最后我们用php代码进行测试，代码如下：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$m = <span class="keyword">new</span> Memcached();</span><br><span class="line">$arr = <span class="keyword">array</span>(<span class="keyword">array</span>(<span class="string">'127.0.0.1'</span>,<span class="number">11211</span>));</span><br><span class="line">$m-&gt;addServers($arr); <span class="comment">//addServers可以同时添加多台服务器</span></span><br><span class="line">print_r($m-&gt;getStats()); <span class="comment">//打印服务器状态</span></span><br><span class="line">print_r($m-&gt;getVersion()); <span class="comment">//打印memcached版本号</span></span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;想在Windows上安装个Memcached的php扩展真是找了好多地方都没找到，Windows上自己编译起来也非常的麻烦。算了吧还是Linux方便，走你：&lt;br&gt;&lt;img src=&quot;/uploads/2015/Linux-install-php-extension/20151027125619.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;Memcached扩展需要安装libmemcached，因为该扩展是依赖libmemcached的API。所以首先我们必须安装libmemcached：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wget https://launchpad.net/libmemcached/1.0/1.0.18/+download/libmemcached-1.0.18.tar.gz&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tar zxvf libmemcached-1.0.18.tar.gz&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; libmemcached-1.0.18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;./configure&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;安装完成后我们可以发现libmemcached被安装在了&lt;br&gt;&lt;figure class=&quot;highlight awk&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;regexp&quot;&gt;/usr/&lt;/span&gt;local&lt;span class=&quot;regexp&quot;&gt;/include/&lt;/span&gt;libmemcached&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术渣" scheme="http://www.jakehu.me/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/"/>
-    
-    
-      <category term="Linux" scheme="http://www.jakehu.me/tags/Linux/"/>
-    
-      <category term="Memcached" scheme="http://www.jakehu.me/tags/Memcached/"/>
     
   </entry>
   
