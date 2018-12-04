@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.jakehu.me/"/>
-  <updated>2018-12-04T02:21:39.760Z</updated>
+  <updated>2018-12-04T02:43:53.635Z</updated>
   <id>http://www.jakehu.me/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>利用gulp对Hexo博客压缩并一键之部署</title>
+    <link href="http://www.jakehu.me/2018/hexo-gulp/"/>
+    <id>http://www.jakehu.me/2018/hexo-gulp/</id>
+    <published>2018-12-04T02:43:45.000Z</published>
+    <updated>2018-12-04T02:43:53.635Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="说在前面"><a href="#说在前面" class="headerlink" title="说在前面"></a>说在前面</h3><p>压缩页面无非就是减小页面大小加快博客访问时间</p><h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><h4 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="selector-tag">i</span> gulp gulp-htmlclean gulp-htmlmin gulp-minify-css gulp-uglify -s</span><br></pre></td></tr></table></figure><h4 id="gulp配置"><a href="#gulp配置" class="headerlink" title="gulp配置"></a>gulp配置</h4><p>在根目录下创建<code>gulpfile.js</code>文件</p><p><code>gulpfile.js</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"><span class="keyword">var</span> minifycss = <span class="built_in">require</span>(<span class="string">'gulp-minify-css'</span>);</span><br><span class="line"><span class="keyword">var</span> uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>);</span><br><span class="line"><span class="keyword">var</span> htmlmin = <span class="built_in">require</span>(<span class="string">'gulp-htmlmin'</span>);</span><br><span class="line"><span class="keyword">var</span> htmlclean = <span class="built_in">require</span>(<span class="string">'gulp-htmlclean'</span>);</span><br><span class="line"><span class="comment">// 压缩 public 目录 css</span></span><br><span class="line">gulp.task(<span class="string">'minify-css'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'./public/**/*.css'</span>)</span><br><span class="line">        .pipe(minifycss())</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'./public'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 压缩 public 目录 html</span></span><br><span class="line">gulp.task(<span class="string">'minify-html'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'./public/**/*.html'</span>)</span><br><span class="line">        .pipe(htmlclean())</span><br><span class="line">        .pipe(htmlmin(&#123;</span><br><span class="line">            removeComments: <span class="literal">true</span>,</span><br><span class="line">            minifyJS: <span class="literal">true</span>,</span><br><span class="line">            minifyCSS: <span class="literal">true</span>,</span><br><span class="line">            minifyURLs: <span class="literal">true</span>,</span><br><span class="line">        &#125;))</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'./public'</span>))</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 压缩 public/js 目录 js</span></span><br><span class="line">gulp.task(<span class="string">'minify-js'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'./public/**/*.js'</span>)</span><br><span class="line">        .pipe(uglify())</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'./public'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 执行 gulp 命令时执行的任务</span></span><br><span class="line">gulp.task(<span class="string">'default'</span>, [</span><br><span class="line">    <span class="string">'minify-html'</span>, <span class="string">'minify-css'</span>, <span class="string">'minify-js'</span></span><br><span class="line">]);</span><br></pre></td></tr></table></figure></p><h4 id="一键部署"><a href="#一键部署" class="headerlink" title="一键部署"></a>一键部署</h4><p>在<code>package.json</code>中加入如下<code>script</code><br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"push"</span>: <span class="string">"hexo cl &amp;&amp; hexo g &amp;&amp; gulp &amp;&amp; hexo d"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>然后在部署的时候只需要运行<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">run</span><span class="bash"> push</span></span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;说在前面&quot;&gt;&lt;a href=&quot;#说在前面&quot; class=&quot;headerlink&quot; title=&quot;说在前面&quot;&gt;&lt;/a&gt;说在前面&lt;/h3&gt;&lt;p&gt;压缩页面无非就是减小页面大小加快博客访问时间&lt;/p&gt;
+&lt;h3 id=&quot;实现&quot;&gt;&lt;a href=&quot;#实现&quot; class=&quot;he
+      
+    
+    </summary>
+    
+      <category term="技术渣" scheme="http://www.jakehu.me/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/"/>
+    
+    
+      <category term="Hexo" scheme="http://www.jakehu.me/tags/Hexo/"/>
+    
+      <category term="gulp" scheme="http://www.jakehu.me/tags/gulp/"/>
+    
+  </entry>
   
   <entry>
     <title>Next之Leancloud访客统计v6.6.0配置</title>
@@ -514,29 +542,6 @@
     
     
       <category term="Composer" scheme="http://www.jakehu.me/tags/Composer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《诗经·小雅· 采薇》</title>
-    <link href="http://www.jakehu.me/2015/Shijing-Caiwei/"/>
-    <id>http://www.jakehu.me/2015/Shijing-Caiwei/</id>
-    <published>2015-10-26T16:00:02.000Z</published>
-    <updated>2018-11-26T06:38:21.286Z</updated>
-    
-    <content type="html"><![CDATA[<p>寒冬，阴雨霏霏，雪花纷纷，一位解甲退役的征夫在返乡途中踽踽独行。道路崎岖，又饥又渴；但边关渐远，乡关渐近。此刻，他遥望家乡，抚今追昔，不禁思绪纷繁，百感交集。艰苦的军旅生活，激烈的战斗场面，无数次的登高望归情景，一幕幕在眼前重现。《采薇》，就是三千年前这样的一位久戍之卒，在归途中的追忆唱叹之作。<br><img src="/uploads/2015/Shijing-Caiwei/20151027132526.jpg"><br>采薇采薇，薇亦作止。曰归曰归，岁亦莫止。<br>靡室靡家，𤞤狁之故。不遑启居，𤞤狁之故。<br>采薇采薇，薇亦柔止。曰归曰归，心亦忧止。<br>忧心烈烈，载饥载渴。我戍未定，靡使归聘。<br>采薇采薇，薇亦刚止。曰归曰归，岁亦阳止。<br>王事靡盬，不遑启处。忧心孔疚，我行不来！<br>彼尔维何？维常之华。彼路斯何？君子之车。<br>戎车既驾，四牡业业。岂敢定居？一月三捷。<br>驾彼四牡，四牡骙骙。君子所依，小人所腓。<br>四牡翼翼，象弭鱼服。岂不日戒？𤞤狁孔棘！<br>昔我往矣，杨柳依依。今我来思，雨雪霏霏。<br>行道迟迟，载渴载饥。我心伤悲，莫知我哀！</p><hr><p>我心伤悲，莫知我哀!</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;寒冬，阴雨霏霏，雪花纷纷，一位解甲退役的征夫在返乡途中踽踽独行。道路崎岖，又饥又渴；但边关渐远，乡关渐近。此刻，他遥望家乡，抚今追昔，不禁思绪纷繁，百感交集。艰苦的军旅生活，激烈的战斗场面，无数次的登高望归情景，一幕幕在眼前重现。《采薇》，就是三千年前这样的一位久戍之卒，在
-      
-    
-    </summary>
-    
-      <category term="在水一方" scheme="http://www.jakehu.me/categories/%E5%9C%A8%E6%B0%B4%E4%B8%80%E6%96%B9/"/>
-    
     
   </entry>
   

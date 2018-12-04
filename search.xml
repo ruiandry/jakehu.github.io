@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[利用gulp对Hexo博客压缩并一键之部署]]></title>
+    <url>%2F2018%2Fhexo-gulp%2F</url>
+    <content type="text"><![CDATA[说在前面压缩页面无非就是减小页面大小加快博客访问时间 实现安装依赖1npm i gulp gulp-htmlclean gulp-htmlmin gulp-minify-css gulp-uglify -s gulp配置在根目录下创建gulpfile.js文件 gulpfile.js123456789101112131415161718192021222324252627282930313233var gulp = require('gulp');var minifycss = require('gulp-minify-css');var uglify = require('gulp-uglify');var htmlmin = require('gulp-htmlmin');var htmlclean = require('gulp-htmlclean');// 压缩 public 目录 cssgulp.task('minify-css', function () &#123; return gulp.src('./public/**/*.css') .pipe(minifycss()) .pipe(gulp.dest('./public'));&#125;);// 压缩 public 目录 htmlgulp.task('minify-html', function () &#123; return gulp.src('./public/**/*.html') .pipe(htmlclean()) .pipe(htmlmin(&#123; removeComments: true, minifyJS: true, minifyCSS: true, minifyURLs: true, &#125;)) .pipe(gulp.dest('./public'))&#125;);// 压缩 public/js 目录 jsgulp.task('minify-js', function () &#123; return gulp.src('./public/**/*.js') .pipe(uglify()) .pipe(gulp.dest('./public'));&#125;);// 执行 gulp 命令时执行的任务gulp.task('default', [ 'minify-html', 'minify-css', 'minify-js']); 一键部署在package.json中加入如下script123"scripts": &#123; "push": "hexo cl &amp;&amp; hexo g &amp;&amp; gulp &amp;&amp; hexo d"&#125; 然后在部署的时候只需要运行1npm run push]]></content>
+      <categories>
+        <category>技术渣</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>gulp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Next之Leancloud访客统计v6.6.0配置]]></title>
     <url>%2F2018%2Fnext-leancloud%2F</url>
     <content type="text"><![CDATA[前因版本：NexT.Pisces v6.6.0Error： 阅读次数：Counter not initialized! See more at console err msg. 解决出现上述之错误，遂查看配置文件之说明1234567891011# Show number of visitors to each article.# You can visit https://leancloud.cn get AppID and AppKey.leancloud_visitors: enable: true app_id: &lt;&lt;your app id&gt;&gt; app_key: &lt;&lt;your app key&gt;&gt; # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security # If you don't care about security in lc counter and just want to use it directly # (without hexo-leancloud-counter-security plugin), set the `security` to `false`. security: true betterPerformance: false 如上述两个解决办法： hexo-leancloud-counter-securitysecurity: false 因为懒所以选择了第二方案。]]></content>
