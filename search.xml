@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Nodejs工具函数集]]></title>
+    <url>%2F2018%2Fnode-utils%2F</url>
+    <content type="text"><![CDATA[对数组中的对象进行排序函数：12345function keysort (key, desc) &#123; return function (a, b) &#123; return desc ? (a[key] &lt; b[key]) : (a[key] &gt; b[key]); &#125;;&#125; 示例：12const arr = [&#123;"id":2,"name":"2"&#125;,&#123;"id":1,"name":"1"&#125;]arr.sort(keysort('name', 'desc')); 判断是否是Float浮点123function isFloat (num) &#123; return num !== parseInt(num);&#125; 保留两位小数，同时不四舍五入12345678910111213141516// number// num 保留位数function toFixedNum (number, num) &#123; const type = typeof (number); let number_arr = []; if (type === 'number') &#123; const str = number.toString(); number_arr = str.split('.'); &#125; else if (type === 'string') &#123; number_arr = number.split('.'); &#125; if (number_arr.length &gt; 1) &#123; number = number_arr[0] + '.' + number_arr[1].substr(0, num); &#125; return parseFloat(number);&#125; 给出开始时间和结束时间，算出中间所有的日期12345678910111213// start ： 2018-01-01// end ： 2018-01-03// return : ["2018-01-01","2018-01-02","2018-01-03"]function getDate (start, end) &#123; start = new Date(start).getTime(); end = new Date(end).getTime(); const date = []; for (; start &lt;= end; start += 86400000) &#123; const tmp = new Date(start); date.push(tmp.getFullYear() + '-' + (tmp.getMonth() + 1) + '-' + tmp.getDate()); &#125; return date;&#125;]]></content>
+      <categories>
+        <category>技术渣</category>
+      </categories>
+      <tags>
+        <tag>Nodejs</tag>
+        <tag>utils</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[CleanMyMac资源之备忘录]]></title>
     <url>%2F2018%2Fcleanmymac%2F</url>
-    <content type="text"><![CDATA[简介CleanMyMac X是一款强大的Mac系统垃圾清理工具，可以清除Mac系统多余的语言包、系统缓存、应用程序、PowerPc软件运行库等，是硬盘瘦身的好工具 官网国际版官网 中文官网 下载地址因为CleanMyMac对不同的版本有不同的授权信息。 下面地址均为官网下载地址https://dl.devmate.com开头。 国际版 CleanMyMac 3 国际版 CleanMyMac X 中文版 CleanMyMac 3 中文版 CleanMyMac X MacPaw支持可在支持中心查询许可证；或者当换机不成功时可以通过支持中心进行许可证重置 支持中心]]></content>
+    <content type="text"><![CDATA[简介CleanMyMac X是一款强大的Mac系统垃圾清理工具，可以清除Mac系统多余的语言包、系统缓存、应用程序、PowerPc软件运行库等，是硬盘瘦身的好工具 官网国际版官网 中文官网 下载地址因为CleanMyMac对不同的版本有不同的授权信息。 下面地址均为官网下载地址https://dl.devmate.com开头。 国际版 CleanMyMac 3 国际版 CleanMyMac X 中文版 CleanMyMac 3 中文版 CleanMyMac X MacPaw支持可在支持中心查询许可证，或者当换机不成功时可以通过支持中心进行许可证重置。 支持中心]]></content>
       <tags>
         <tag>cleanmymac</tag>
       </tags>
