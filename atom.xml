@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.jakehu.me/"/>
-  <updated>2018-12-04T02:43:53.635Z</updated>
+  <updated>2018-12-05T01:50:12.921Z</updated>
   <id>http://www.jakehu.me/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>CleanMyMac资源之备忘录</title>
+    <link href="http://www.jakehu.me/2018/cleanmymac/"/>
+    <id>http://www.jakehu.me/2018/cleanmymac/</id>
+    <published>2018-12-05T01:22:00.000Z</published>
+    <updated>2018-12-05T01:50:12.921Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p><code>CleanMyMac X</code>是一款强大的<code>Mac</code>系统垃圾清理工具，可以清除Mac系统多余的语言包、系统缓存、应用程序、<code>PowerPc</code>软件运行库等，是硬盘瘦身的好工具</p><h3 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h3><p><a href="https://macpaw.com/" target="_blank" rel="noopener">国际版官网</a></p><p><a href="http://www.mycleanmymac.com/" target="_blank" rel="noopener">中文官网</a></p><h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>因为<code>CleanMyMac</code>对不同的版本有不同的授权信息。</p><p>下面地址均为官网下载地址<code>https://dl.devmate.com</code>开头。</p><p><a href="https://dl.devmate.com/com.macpaw.CleanMyMac3/CleanMyMac3.dmg" target="_blank" rel="noopener">国际版 CleanMyMac 3</a></p><p><a href="https://dl.devmate.com/com.macpaw.CleanMyMac4/CleanMyMacX.dmg" target="_blank" rel="noopener">国际版  CleanMyMac X</a></p><p><a href="https://dl.devmate.com/com.macpaw.zh.CleanMyMac3/CleanMyMacChinese.dmg" target="_blank" rel="noopener">中文版 CleanMyMac 3</a></p><p><a href="https://dl.devmate.com/com.macpaw.zh.CleanMyMac4/CleanMyMacXChinese.dmg" target="_blank" rel="noopener">中文版 CleanMyMac X</a></p><h3 id="MacPaw支持"><a href="#MacPaw支持" class="headerlink" title="MacPaw支持"></a>MacPaw支持</h3><p>可在支持中心查询许可证；或者当换机不成功时可以通过支持中心进行许可证重置</p><p><a href="https://macpaw.com/zh/support" target="_blank" rel="noopener">支持中心</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;&lt;code&gt;CleanMyMac X&lt;/code&gt;是一款强大的&lt;code&gt;Mac&lt;/code&gt;系统垃圾清理工具，可以清除Mac系统多余的语言
+      
+    
+    </summary>
+    
+    
+      <category term="cleanmymac" scheme="http://www.jakehu.me/tags/cleanmymac/"/>
+    
+  </entry>
+  
+  <entry>
     <title>利用gulp对Hexo博客压缩并一键之部署</title>
     <link href="http://www.jakehu.me/2018/hexo-gulp/"/>
     <id>http://www.jakehu.me/2018/hexo-gulp/</id>
     <published>2018-12-04T02:43:45.000Z</published>
-    <updated>2018-12-04T02:43:53.635Z</updated>
+    <updated>2018-12-05T01:48:41.337Z</updated>
     
     <content type="html"><![CDATA[<h3 id="说在前面"><a href="#说在前面" class="headerlink" title="说在前面"></a>说在前面</h3><p>压缩页面无非就是减小页面大小加快博客访问时间</p><h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><h4 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="selector-tag">i</span> gulp gulp-htmlclean gulp-htmlmin gulp-minify-css gulp-uglify -s</span><br></pre></td></tr></table></figure><h4 id="gulp配置"><a href="#gulp配置" class="headerlink" title="gulp配置"></a>gulp配置</h4><p>在根目录下创建<code>gulpfile.js</code>文件</p><p><code>gulpfile.js</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"><span class="keyword">var</span> minifycss = <span class="built_in">require</span>(<span class="string">'gulp-minify-css'</span>);</span><br><span class="line"><span class="keyword">var</span> uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>);</span><br><span class="line"><span class="keyword">var</span> htmlmin = <span class="built_in">require</span>(<span class="string">'gulp-htmlmin'</span>);</span><br><span class="line"><span class="keyword">var</span> htmlclean = <span class="built_in">require</span>(<span class="string">'gulp-htmlclean'</span>);</span><br><span class="line"><span class="comment">// 压缩 public 目录 css</span></span><br><span class="line">gulp.task(<span class="string">'minify-css'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'./public/**/*.css'</span>)</span><br><span class="line">        .pipe(minifycss())</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'./public'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 压缩 public 目录 html</span></span><br><span class="line">gulp.task(<span class="string">'minify-html'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'./public/**/*.html'</span>)</span><br><span class="line">        .pipe(htmlclean())</span><br><span class="line">        .pipe(htmlmin(&#123;</span><br><span class="line">            removeComments: <span class="literal">true</span>,</span><br><span class="line">            minifyJS: <span class="literal">true</span>,</span><br><span class="line">            minifyCSS: <span class="literal">true</span>,</span><br><span class="line">            minifyURLs: <span class="literal">true</span>,</span><br><span class="line">        &#125;))</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'./public'</span>))</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 压缩 public/js 目录 js</span></span><br><span class="line">gulp.task(<span class="string">'minify-js'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'./public/**/*.js'</span>)</span><br><span class="line">        .pipe(uglify())</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'./public'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 执行 gulp 命令时执行的任务</span></span><br><span class="line">gulp.task(<span class="string">'default'</span>, [</span><br><span class="line">    <span class="string">'minify-html'</span>, <span class="string">'minify-css'</span>, <span class="string">'minify-js'</span></span><br><span class="line">]);</span><br></pre></td></tr></table></figure></p><h4 id="一键部署"><a href="#一键部署" class="headerlink" title="一键部署"></a>一键部署</h4><p>在<code>package.json</code>中加入如下<code>script</code><br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"push"</span>: <span class="string">"hexo cl &amp;&amp; hexo g &amp;&amp; gulp &amp;&amp; hexo d"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>然后在部署的时候只需要运行<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">run</span><span class="bash"> push</span></span><br></pre></td></tr></table></figure></p>]]></content>
     
@@ -517,31 +540,6 @@
     
       <category term="在水一方" scheme="http://www.jakehu.me/categories/%E5%9C%A8%E6%B0%B4%E4%B8%80%E6%96%B9/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>论如何解决在Windows下使用Composer时出现的这些问题</title>
-    <link href="http://www.jakehu.me/2015/Windows-Composer-Error/"/>
-    <id>http://www.jakehu.me/2015/Windows-Composer-Error/</id>
-    <published>2015-10-27T16:00:00.000Z</published>
-    <updated>2018-11-26T06:38:43.036Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="问题一："><a href="#问题一：" class="headerlink" title="问题一："></a>问题一：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Fatal error: Call to undefined method Composer\Package\CompletePackage::getTrans</span><br><span class="line">portOptions() <span class="keyword">in</span> C:\Users\idiot\AppData\Roaming\Composer\vendor\fxp\composer-ass</span><br><span class="line">et-plugin\Package\AbstractLazyCompletePackage.php on line 184</span><br></pre></td></tr></table></figure><p>解决办法：<br>下载最新的 composer.phar<br><a href="https://getcomposer.org/download/" target="_blank" rel="noopener">https://getcomposer.org/download/</a></p><h3 id="问题二："><a href="#问题二：" class="headerlink" title="问题二："></a>问题二：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Could not fetch https://api.github.com/repos/jquery/jquery, enter your GitHub cr</span><br><span class="line">edentials to go over the API rate <span class="built_in">limit</span></span><br><span class="line">The credentials will be swapped <span class="keyword">for</span> an OAuth token stored <span class="keyword">in</span> C:/Users/idiot/AppD</span><br><span class="line">ata/Roaming/Composer/auth.json, your password will not be stored</span><br><span class="line">To revoke access to this token you can visit https://github.com/settings/applica</span><br><span class="line">tions</span><br><span class="line">Username:</span><br></pre></td></tr></table></figure><p>解决办法：<br>1、更新Composer到最新版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php composer.phar self-update</span><br></pre></td></tr></table></figure></p><p>2、登录到Github <a href="https://github.com/settings/applications" target="_blank" rel="noopener">https://github.com/settings/applications</a> “generated a token”增加一个新的Token<br>3、运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php composer.phar config -g github-oauth.github.com token</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;问题一：&quot;&gt;&lt;a href=&quot;#问题一：&quot; class=&quot;headerlink&quot; title=&quot;问题一：&quot;&gt;&lt;/a&gt;问题一：&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre
-      
-    
-    </summary>
-    
-      <category term="技术渣" scheme="http://www.jakehu.me/categories/%E6%8A%80%E6%9C%AF%E6%B8%A3/"/>
-    
-    
-      <category term="Composer" scheme="http://www.jakehu.me/tags/Composer/"/>
     
   </entry>
   
